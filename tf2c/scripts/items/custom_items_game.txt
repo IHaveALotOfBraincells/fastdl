@@ -2869,17 +2869,17 @@
 					"attribute_class"	"mult_clipsize"
 					"value"				"0.75"
 				}
-				"mp40 regen explain"
+				"health drain medic"
 				{
-					"attribute_class"		"VISUALONLY"
-					"value"				"1"
+					"attribute_class"	"add_health_regen"
+					"value"	"-6"
 				}
+				//"mp40 regen explain"
+				//{
+				//	"attribute_class"		"VISUALONLY"
+				//	"value"				"1"
+				//}
 				"hidden separator" "1"
-				"medic regen penalty"
-				{
-					"attribute_class"	"medic_regen"
-					"value"	"0"
-				}
 				"override projectile type"
 				{
 					"attribute_class"		"override_projectile_type"
@@ -3039,6 +3039,83 @@
 				"sound_special3"	"MVM.GiantHeavyGunSpin"
 				"sound_burst"	"MVM.GiantHeavyGunFire"
 			}
+		}
+		"4277" // chocolate
+		{
+			"name"				"chocolate bar"
+			"item_name"			"Dalokohs Bar"
+			"item_type_name"	"#TF_Weapon_LunchBox"
+			"item_description"	"yummers"
+			"item_quality"		"normal"
+
+			"item_class"	"tf_weapon_lunchbox"
+			"item_slot"		"secondary"
+			"used_by_classes"
+			{
+				"Heavy"		"1"
+			}
+			"attributes"
+			{
+				"dalokohs explain"		"1"
+
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value"				"1"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"				"1"
+				}
+				"gesture speed increase"
+				{
+					"attribute_class"	"mult_gesture_time"
+					"value"				"2"
+				}
+				"custom lunchbox throwable type"
+				{
+					"attribute_class"	"custom_lunchbox_throwable_type"
+					"value"				"1"
+				}
+				"custom lunchbox throwable model"
+				{
+					"attribute_class"	"custom_lunchbox_throwable_model"
+					"value"				"models/items/plate_chocolate.mdl"
+				}
+				"mod lunchbox critboostable"
+				{
+					"attribute_class" 	"mod_lunchbox_critboostable"
+					"value"				"1"
+				}
+			}
+
+			"model_player"			"models/workshop/weapons/c_models/c_chocolate/c_chocolate.mdl"
+			"model_world"			"models/workshop/weapons/c_models/c_chocolate/c_chocolate.mdl"
+			"anim_slot"				"ITEM1"
+			"extra_wearable"		"models/player/items/sandvich_lunchbox.mdl"
+			"attach_to_hands"		"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -11"
+
+				"item_meter_charge_type"	"1"
+				"item_meter_charge_rate"	"30"
+				"meter_label"				"#TF_Meter_LunchBox"
+			}
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_SECONDARY_VM_INSPECT_START"	"ACT_ITEM1_VM_INSPECT_START"
+					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM1_VM_INSPECT_IDLE"
+					"ACT_SECONDARY_VM_INSPECT_END"		"ACT_ITEM1_VM_INSPECT_END"
+				}
+			}
+
+			"image_inventory"		"backpack/workshop/weapons/c_models/c_chocolate/c_chocolate"
+			"mouse_pressed_sound"	"ui/item_sandwich_drop.wav"
+			"drop_sound"			"ui/item_sandwich_pickup.wav"
 		}
 		"2642"
 		{
@@ -3745,6 +3822,8 @@ the humble efficient eliminator:"
 			// "extra_wearable"	"models/workshop/player/items/spy/sum23_cleaners_cap_style1/sum23_cleaners_cap_style1.mdl"
 			"item_class"	"tf2c_weapon_hunting_revolver"
 			"item_slot"		"primary"
+			"anim_slot"		"secondary"
+			"extra_wearable" "models/player/items/sniper/pro_hat.mdl"
 			"used_by_classes"
 			{
 				"Sniper"	"1"
@@ -3756,15 +3835,16 @@ the humble efficient eliminator:"
 					"attribute_class"	"add_maxhealth"
 					"value"				"25"
 				}
+				"hidden separator"	"1"
 				"sniper zoom penalty"
 				{
 					"attribute_class"	"mult_zoom_fov"
-					"value"				"0.3"
+					"value"				"0.35"
 				}
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.12"
+					"value"				"0.135"
 				}
 				"clip size bonus"
 				{
@@ -3779,7 +3859,7 @@ the humble efficient eliminator:"
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.35"
+					"value"				"0.3"
 				}
 				"headshot is minicrit"
 				{
@@ -3788,7 +3868,7 @@ the humble efficient eliminator:"
 				}
 			}
 
-			"model_world"				"models/weapons/c_models/c_eliminator_smg/c_eliminator_smg.mdl"
+			"model_world"				"models/weapons/v_models/v_eliminator_smg/v_clipper_smg_sniper.mdl"
 			"model_player"				"models/weapons/v_models/v_eliminator_smg/v_clipper_smg_sniper.mdl"
 			"attach_to_hands"			"2"
 			"static_attrs"
@@ -3798,6 +3878,10 @@ the humble efficient eliminator:"
 			}
 			"visuals"
 			{
+				"player_bodygroups"
+				{
+					"hat"				"1"
+				}
 				"sound_single_shot"	"Weapon_UrbanProfessional.Single"
 				"sound_burst"	"Weapon_UrbanProfessional.SingleCrit"
 			}
@@ -3807,6 +3891,73 @@ the humble efficient eliminator:"
 			"image_inventory"		"backpack/weapons/c_models/c_eliminator_smg/c_eliminator_smg"
 			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
+		}
+		"3758" // jarate
+		{
+			"name"	"Jarate"
+			"item_class"	"tf_weapon_jar"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_extinguish"			"1"
+			}
+			"base_item_name"	"Jarate"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Jar"
+			"item_name"	"#TF_Unique_Achievement_Jar"
+			"item_slot"	"secondary"
+			"anim_slot"	"item1"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"attach_to_hands"	"1"
+			"image_inventory"	"backpack/weapons/c_models/urinejar"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 			"22"
+			"model_player"	"models/weapons/c_models/urinejar.mdl"
+			"used_by_classes"
+			{
+				"sniper"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -9"
+			}
+			"attributes"
+			{
+				"jarate description"
+				{
+					"attribute_class"	"desc_jarate_description"
+					"value"	"1"
+				}
+				"kill eater score type"
+				{
+					"attribute_class"	"kill_eater_score_type"
+					"value" 	"4"
+				}
+				"extinguish reduces cooldown"
+				{
+					"attribute_class" "extinguish_reduces_cooldown"
+					"value" "0.8"
+				}
+			}
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_SECONDARY_VM_INSPECT_START"	"ACT_ITEM1_VM_INSPECT_START"
+					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM1_VM_INSPECT_IDLE"
+					"ACT_SECONDARY_VM_INSPECT_END"		"ACT_ITEM1_VM_INSPECT_END"
+				}
+			}
+			"xifier_class_remap"	"jarate"
+			"mouse_pressed_sound"	"ui/item_bottle_pickup.wav"
+			"drop_sound"		"ui/item_bottle_drop.wav"
 		}
 		"9021" // mortal mortar
 		{
@@ -4010,6 +4161,88 @@ the humble efficient eliminator:"
 			}
 			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
 			"drop_sound"		"ui/item_pack_drop.wav"
+		}
+		"6742" // rescue ranger
+		{
+			"name"	"The Rescue Ranger"
+			"item_class"	"tf_weapon_shotgun_building_rescue"
+			"show_in_armory"	"1"
+			"item_logname"	"rescue_ranger"
+			"item_iconname"	"rescue_ranger"
+			"item_type_name"	"#TF_Weapon_Shotgun"
+			"item_name"	"#TF_Weapon_Shotgun_Building_Rescue"
+			"item_slot"	"primary"
+			"item_quality"	"normal"
+			"propername"	"1"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"attach_to_hands"	"1"
+			"inspect_panel_dist" "45"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"	"models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun.mdl"
+			"used_by_classes"
+			{
+				"engineer"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"			"10 0 -10"
+				"weapon_stattrak_module_scale"		"0.608"
+			}
+			"attributes"
+			{
+				"engineer building teleporting pickup"
+				{
+					"attribute_class"	"building_teleporting_pickup"
+					"value"	"100"
+				}
+				"arrow heals buildings"
+				{
+					"attribute_class"	"arrow_heals_buildings"
+					"value"				"60"
+				}
+				"override projectile type"
+				{
+					"attribute_class"	"override_projectile_type"
+					"value"				"18"
+				}
+				"mark for death on building pickup"
+				{
+					"attribute_class"	"mark_for_death_on_building_pickup"
+					"value"				"1"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"0.5"
+				}
+				"clip size penalty"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value"				"0.66"
+				}
+				"repair health to metal ratio DISPLAY ONLY"
+				{
+					"attribute_class"	"repair_health_to_metal_ratio_DISPLAY_ONLY"
+					"value"				"4"
+				}
+			}
+			"visuals"
+			{
+				"attached_models"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun_screen.mdl"
+					}
+				}
+				"sound_single_shot"	"Weapon_RescueRanger.Single"
+				"sound_burst"    "Weapon_RescueRanger.SingleCrit"
+			}
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 		}
 		"9107" // engi nail gun
 		{
@@ -14509,6 +14742,15 @@ the humble efficient eliminator:"
 			"hidden"				"0"
 			"effect_type"			"neutral"
 			"stored_as_integer"		"1"
+		}
+		"4009"
+		{
+			"name"					"dalokohs explain"
+			"attribute_class"		"dalokohs_explain"
+			"description_string"	"Eat to regain up to 60 health
+			Alt-fire: Share the Dalokohs Bar with a friend (Small health kit)"
+			"description_format"	"value_is_additive"
+			"effect_type"			"neutral"
 		}
 	}
 	"attribute_controlled_attached_particles"
