@@ -104,6 +104,7 @@
 			"static_attrs"
 			{
 				"min_viewmodel_offset"	"10 0 -9"
+				"damage applies to sappers" "1"
 			}
 
 			"image_inventory"		"backpack/weapons/w_models/w_fireaxe"
@@ -2815,7 +2816,7 @@
 			"mouse_pressed_sound"	"ui/item_heavy_emp_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
-		"411" // quickfix
+		"7700" // quickfix
 		{
 			"name"				"quickfix"
 			"item_name"			"Quick-Fix"
@@ -2862,16 +2863,32 @@
 					"value"	"0.5"
 				}
 			}
+			"visuals_red"
+			{
+				"skin" "0"
+				"custom_particlesystem"
+				{
+					"system"	"medicgun_beam_attrib_overheal_red"
+				}
+			}
+			"visuals_blu"
+			{
+				"skin" "1"
+				"custom_particlesystem"
+				{
+					"system"	"medicgun_beam_attrib_overheal_blue"
+				}
+			}
 			"image_inventory"	"backpack/weapons/c_models/c_proto_medigun/c_proto_medigun"
 			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
-		"4667" // Combat Syringe Gun
+		"7701" // mp40
 		{
 			"name"				"mp40"
 			"item_name"			"MP40"
 			"item_type_name"	"#TF_Weapon_SyringeGun"
-			"item_description"	"I have no idea what I'm doing what the fuck is this shit bruh."
+			"item_description"	"Model by: 'Donut the Vikingchap'"
 			"item_quality"		"normal"
 
 			"item_class"	"tf_weapon_syringegun_medic"
@@ -2945,12 +2962,13 @@
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
-		"3732" // Air Superiority
+		"7300" // Air Superiority
 		{
 			"name"				"air superiority"
 			"item_name"			"Air Superiority"
 			"item_type_name"	"#TF_Weapon_FlameThrower"
-			"item_description"	"Airblast teammates to give them and yourself a speed boost."
+			"item_description"	"Model by: 'Dement'
+			Sounds by: 'Thuper Carl'"
 			"item_quality"		"normal"
 
 			"item_class"	"tf_weapon_flamethrower"
@@ -2962,6 +2980,7 @@
 
 			"model_world"				"models/weapons/w_models/w_afterburner/w_afterburner.mdl"
 			"model_player"				"models/weapons/v_models/v_afterburner/v_afterburner_pyro.mdl"
+			"extra_wearable" 			"models/workshop/player/items/pyro/fall2013_air_raider/fall2013_air_raider.mdl"
 			"attach_to_hands"	"1"
 			"static_attrs"
 			{
@@ -2980,6 +2999,7 @@
 			}
 			"attributes"
 			{
+				"air superiority explain" "1"
 				"airblast_give_teammate_speed_boost"
 				{
 					"attribute_class"	"airblast_give_teammate_speed_boost"
@@ -3010,7 +3030,6 @@
 					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
 				}
 				"sound_single_shot"		"Weapon_AfterBurner.FireStart"
-//				"sound_special1"		"Weapon_AfterBurner.FireLoop"
 				"sound_reload"			"Weapon_AfterBurner.FireLoop"
 				"sound_special3"		"Weapon_AfterBurner.WindDown"
 				"sound_double_shot"		"Weapon_AfterBurner.AirBurstAttack"
@@ -3021,101 +3040,106 @@
 			"mouse_pressed_sound"	"ui/item_flamethrower_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
-		"6721" // firehose
+		"7500"
 		{
-			"name"				"firehose"
-			"item_name"			"(wip) firehose"
-			"item_type_name"	"#TF_Weapon_FlameThrower"
-			"item_description"	"#TF_Weapon_FlameThrower_Desc"
-			"item_quality"		"normal"
-			"extra_wearable" 	"models/player/items/pyro/fireman_helmet.mdl"
-			"item_class"		"tf_weapon_flamethrower"
-			"item_slot"			"primary"
+		    "name"						"Heavy Shotgun"
+			"item_class"				"TF_WEAPON_SHOTGUN_PRIMARY"
+			"show_in_armory"			"1"
+			"item_slot"					"primary"
+			"anim_slot"					"secondary"
+			"image_inventory_size_w"	"128"
+			"image_inventory_size_h"	"82"
+
+			"propername"				"0"
+			"item_name"					"Heavy Shotgun"
+			"item_type_name"			"Heavy Shotgun"
+			"item_description"			"Model by: 'Haau, kibbleknight'
+Animations by: 'Kylul'"
+            "item_logname"				"Heavy Shotgun"
+			"item_iconname"				"Heavy Shotgun"
+			"image_inventory"			"backpack/weapons/c_models/c_barrakada/c_barrakada"
+			"model_world"				"models/weapons/c_models/c_barrakada/c_barrakada.mdl"
+			"model_player"				"models/weapons/v_models/v_barrakada/v_barrakada_fix.mdl"
+			"extra_wearable"			"models/workshop/player/items/heavy/dec24_battle_balaclava_style2/dec24_battle_balaclava_style2.mdl"
+			"attach_to_hands"			"2"
 			"used_by_classes"
 			{
-				"Pyro"	"1"
+				"heavy"					"1"
 			}
-
-			"model_world"				"models/weapons/w_models/w_firehose/w_firehose_pyro.mdl"
-			"model_player"				"models/weapons/v_models/v_firehose/v_firehose_pyro.mdl"
-			"attach_to_hands"	"2"
 			"static_attrs"
 			{
-				"flamethrower explain"			"1"
-				"min_viewmodel_offset"	"10 0 -10"
-
-				"flame_gravity"					"0"
-				"flame_drag"					"8.500000"
-				"flame_up_speed"				"50"
-				"flame_speed"					"2450"
-				"flame_spread_degree"			"2.800000"
-				"flame_lifetime"				"0.600000"
-				"flame_random_life_time_offset"	"0.100000"
-				"flame_velocity_fade_start"		"0.300000"
-				"flame_velocity_fade_end"		"0.500000"
+				"class select override vcd"				"taunt02_v2"
+				"min_viewmodel_offset"					"5 -2 -10"
 			}
 			"attributes"
 			{
-				"mark for death"
+				//"damage bonus"
+				//{
+				//	"attribute_class"		"mult_dmg"
+				//	"value"				"1.2"
+				//}
+				"bullets per shot bonus"
 				{
-					"attribute_class"	"mark_for_death"
-					"value"	"1"
+					"attribute_class"	"mult_bullets_per_shot"
+					"value" "1.66"
 				}
-				"slow enemy on hit major"
+				"clip size bonus"
 				{
-					"attribute_class"		"mult_onhit_enemyspeed_major"
-					"value"	"1"
+					"attribute_class"	"mult_clipsize"
+					"value"				"1.33"
 				}
-				"damage penalty"
+				"hidden primary max ammo bonus"
 				{
-					"attribute_class"	"mult_dmg"
-					"value"	"0.35"
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"1.32"
 				}
-				"weapon burn time reduced"
+				"move speed bonus"
 				{
-					"attribute_class"	"mult_wpn_burntime"
-					"value"	"-200"
+					"attribute_class"		"mult_player_movespeed"
+					"value"				"1.1"
 				}
-				"weapon burn time reduced"
+				"fire rate penalty"
 				{
-					"attribute_class"	"mult_wpn_burntime"
-					"value"	"-200"
+					"attribute_class"		"mult_postfiredelay"
+					"value"				"1.2"
+				}
+				"heavy shotgun explain" "1"
+				"hidden separator" "1"
+				//"spread penalty"
+				//{
+				//	"attribute_class"	"mult_spread_scale"
+				//	"value" "1.25"
+				//}
+				"max health additive bonus"
+				{
+					"attribute_class"		"add_maxhealth"
+					"value"				"-50"
 				}
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_FireHose.FireStart"
-				"sound_reload"			"Weapon_FireHose.FireLoop"								// TF2C v2.1.0 - Flamethrower now uses a a hacky fix to remedy the looping flame sound bug (which came from airblasting an explosive projectile)
-				"sound_special3"		"Weapon_FireHose.WindDown"
-				"sound_burst"			"Weapon_FireHose.FireLoopCrit"
-				"beam_effect"			"firehose_steam"
-				"animation_replacement"
-				{
-					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"	"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
-					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
-					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
-				}
+			    "sound_single_shot"		"Weapon_HuntingShotgun.Fire"
+				"sound_burst"			"Weapon_HuntingShotgun.FireCrit"
 			}
-
-			"image_inventory"			"backpack/weapons/w_models/w_firehose"
-			"mouse_pressed_sound"	"ui/item_flamethrower_pickup.wav"
-			"drop_sound"			"ui/item_heavy_gun_drop.wav"
+			"mouse_pressed_sound"		"#ui/item_pack_pickup.wav"
+			"drop_sound"				"#ui/item_pack_drop.wav"
 		}
-		"298"
+		"7501"
 		{
-			"name"	"Iron Curtain"
-			"item_class"	"tf_weapon_minigun"
-			"prefab"	"weapon_minigun"
+			"name"				"Lead Storm"
+			"item_class"		"tf_weapon_minigun"
+			"prefab"			"weapon_minigun"
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_Minigun"
-			"item_name"	"#TF_Iron_Curtain"
-			"item_slot"	"primary"
-			"item_logname"	"iron_curtain"
-			"item_iconname"	"iron_curtain"
-			"image_inventory"	"backpack/workshop/weapons/c_models/c_iron_curtain/c_iron_curtain"
+			"item_name"			"Lead Storm"
+			"item_slot"			"primary"
+			"item_logname"		"Lead Storm"
+			"item_iconname"		"Lead Storm"
+			"image_inventory"	"backpack/weapons/w_models/w_leadstorm"
 			"image_inventory_size_w"		"128"
 			"image_inventory_size_h"		"82"
-			"model_player"	"models/workshop/weapons/c_models/c_iron_curtain/c_iron_curtain.mdl"
+			"item_description"			"Model by: 'lol_0101'"
+			"model_player"	"models/weapons/c_models/c_leadstorm/c_leadstorm.mdl"
 			"attach_to_hands"	"1"
 			"min_ilevel"	"5"
 			"max_ilevel"	"5"
@@ -3131,30 +3155,38 @@
 			}
 			"attributes"
 			{
-				"spunup_damage_resistance"
+				"fire rate bonus"
 				{
-					"attribute_class"	"spunup_damage_resistance"
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.5"
+				}
+				"minigun spinup time decreased"
+				{
+					"attribute_class"	"mult_minigun_spinup_time"
 					"value"				"0.8"
 				}
-				"spunup_push_force_immunity"
-				{
-					"attribute_class"	"spunup_push_force_immunity"
-					"value"				"1"
-				}
-				"damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"	"1.20"
-				}
+				"lead storm explain" "1"
+				"lead storm explain 2" "1"
+				"hidden separator" "1"
 				"aiming movespeed decreased"
 				{
 					"attribute_class"	"mult_player_aiming_movespeed"
-					"value" "0.75"
+					"value" "1.3"
 				}
-				"spread penalty"
+				"maxammo primary increased"
+				{
+					"attribute_class"		"mult_maxammo_primary"
+					"value"				"1.5"
+				}
+				"weapon spread bonus"
 				{
 					"attribute_class"	"mult_spread_scale"
-					"value" "1.5"
+					"value" "0.75"
+				}
+				"bullets per shot bonus"
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value" "0.25"
 				}
 			}
 			"visuals"
@@ -3166,98 +3198,14 @@
 				"sound_burst"	"MVM.GiantHeavyGunFire"
 			}
 		}
-		"9140"
+		"7200"
 		{
-		    "name"						"Heavy Shotgun"
-			"item_class"				"TF_WEAPON_SHOTGUN_PRIMARY"
-			"show_in_armory"			"1"
-			"item_slot"					"primary"
-			"anim_slot"					"secondary"
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"propername"				"0"
-			"item_name"					"Heavy Shotgun"
-			"item_type_name"			"Heavy Shotgun"
-			"item_description"			"
-"
-            "item_logname"				"Heavy Shotgun"
-			"item_iconname"				"Heavy Shotgun"
-			"image_inventory"			"backpack/weapons/c_models/c_huntingshotgun"
-			"model_world"				"models/weapons/c_models/c_huntingshotgun/c_huntingshotgun.mdl"
-			"model_player"				"models/weapons/v_models/v_huntingshotgun/v_huntingshotgun_soldier.mdl"
-			"extra_wearable"			"models/workshop/player/items/heavy/dec24_battle_balaclava_style2/dec24_battle_balaclava_style2.mdl"
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"heavy"					"1"
-			}
-			"static_attrs"
-			{
-				"class select override vcd"				"taunt02_v2"
-				"min_viewmodel_offset"					"5 -2 -10"
-			}
-			"attributes"
-			{
-				"clip size bonus"
-				{
-					"attribute_class"	"mult_clipsize"
-					"value"				"1.33"
-				}
-				"hidden primary max ammo bonus"
-				{
-					"attribute_class"	"mult_maxammo_primary"
-					"value"				"1.32"
-				}
-				"damage bonus"
-				{
-					"attribute_class"		"mult_dmg"
-					"value"				"1.25"
-				}
-				"hidden separator" "1"
-				"Reload time decreased"
-				{
-					"attribute_class"		"mult_reload_time"
-					"value" "0.75"
-				}
-				//"spread penalty"
-				//{
-				//	"attribute_class"	"mult_spread_scale"
-				//	"value" "1.25"
-				//}
-				"hidden secondary max ammo penalty"
-				{
-					"attribute_class"		"mult_maxammo_secondary"
-					"value" "1.33"
-				}
-				//"move speed bonus"
-				//{
-				//	"attribute_class"		"mult_player_movespeed"
-				//	"value"				"1.2"
-				//}
-				//"hidden separator"	"1"
-				//"max health additive bonus"
-				//{
-				//	"attribute_class"		"add_maxhealth"
-				//	"value"				"-50"
-				//}
-			}
-			"visuals"
-			{
-			    "sound_single_shot"		"Weapon_HuntingShotgun.Fire"
-				"sound_burst"			"Weapon_HuntingShotgun.FireCrit"
-			}
-			"mouse_pressed_sound"		"#ui/item_pack_pickup.wav"
-			"drop_sound"				"#ui/item_pack_drop.wav"
-		}
-		"237"
-		{
-			"name"	"Rocket Jumper"
-			"item_class"	"tf_weapon_rocketlauncher"
+			"name"				"Rocket Jumper"
+			"item_class"		"tf_weapon_rocketlauncher"
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_RocketLauncher"
-			"item_name"	"#TF_Weapon_RocketLauncher_Jump"
-			"item_description"	"#TF_Weapon_RocketLauncher_Jump_Desc"
+			"item_name"			"#TF_Weapon_RocketLauncher_Jump"
+			"item_description"	"Model by: 'ficool2'"
 			"item_slot"	"primary"
 			"min_ilevel"	"1"
 			"max_ilevel"	"1"
@@ -3307,7 +3255,7 @@
 				"sound_special1"		"Weapon_Rocket_Jumper.Explode"
 			}
 		}
-		"444"
+		"7201"
 		{
 			"name"			"The Mantreads"
 			"item_class"		"tf_wearable"
@@ -3367,7 +3315,7 @@
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
 			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
-		"416"
+		"7202"
 		{
 			"name"	"The Market Gardener"
 			"item_class"	"tf_weapon_shovel"
@@ -3417,7 +3365,237 @@
 			"mouse_pressed_sound"	"ui/item_shovel_pickup.wav"
 			"drop_sound"		"ui/item_shovel_drop.wav"
 		}
-		"6740"
+		"7203"
+		{
+			"name"	"The Pain Train"
+			"item_class"	"tf_weapon_shovel"
+			"item_logname"	"paintrain"
+			"item_iconname"	"paintrain"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_MakeshiftClub"
+			"item_name"	"#TF_Unique_Makeshiftclub"
+			"item_slot"	"melee"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_paintrain/c_paintrain"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"55"
+			"model_player"	"models/workshop/weapons/c_models/c_paintrain/c_paintrain.mdl"
+			"attach_to_hands"	"1"
+			"item_quality"	"normal"
+			"propername"	"1"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"used_by_classes"
+			{
+				"soldier"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 -3 -11"
+			}
+			"attributes"
+			{
+				"damage bonus"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"1.35"
+				}
+				"hit self on miss"
+				{
+					"attribute_class"		"hit_self_on_miss"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"sound_melee_miss"	"Weapon_PickAxe.Swing"
+				"sound_melee_hit"	"Weapon_PickAxe.HitFlesh"
+				"sound_burst"		"Weapon_PickAxe.SwingCrit"
+				"sound_melee_hit_world"	"Weapon_Shovel.HitWorld"
+
+				"animation_replacement"
+				{
+					"ACT_MELEE_VM_INSPECT_START"	"ACT_MELEE_ALT1_VM_INSPECT_START"
+					"ACT_MELEE_VM_INSPECT_IDLE"		"ACT_MELEE_ALT1_VM_INSPECT_IDLE"
+					"ACT_MELEE_VM_INSPECT_END"		"ACT_MELEE_ALT1_VM_INSPECT_END"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_wood_pole_pickup.wav"
+			"drop_sound"		"ui/item_wood_pole_drop.wav"
+		}
+		"7204" // mortal mortar
+		{
+			"name"				"mortal mortar"
+			"item_name"			"Mortal Mortar"
+			"item_type_name"	"#TF_Weapon_RocketLauncher"
+			"item_description"	"Models by: 'Nano393', 'Elbagast' and 'N-Cognito'"
+			"item_quality"		"normal"
+			"image_inventory"			"backpack\workshop\weapons\c_models\c_mortar\c_mortar"
+			"item_class"	"tf_weapon_rocketlauncher"
+			"item_slot"		"primary"
+			"used_by_classes"
+			{
+				"Soldier"		"1"
+			}
+			"attributes"
+			{
+				"mortal mortar explain"
+				{
+					"attribute_class"		"VISUALONLY"
+					"value"				"1"
+				}
+				"mod mini-crit airborne"
+				{
+					"attribute_class"	"mini_crit_airborne"
+					"value" "1"
+				}
+				"damage bonus"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"1.1075"
+				}
+				"Projectile speed increased"
+				{
+					"attribute_class"	"mult_projectile_speed"
+					"value"				"1.8"
+				}
+				"Blast radius decreased"
+				{
+					"attribute_class"	"mult_explosion_radius"
+					"value"	"0.3"
+				}
+				"mortal mortar arc explain"
+				{
+					"attribute_class"		"VISUALONLY"
+					"value"				"1"
+				}
+				"hidden separator"		"1"
+								"no damage falloff over distance"
+				{
+					"attribute_class"	"mod_no_dmg_falloff"
+					"value"				"1"
+				}
+				"rocket gravity"
+				{
+					"attribute_class"	"mod_rocket_gravity"
+					"value"				"1"
+				}
+				"custom projectile model"
+				{
+					"attribute_class"	"custom_projectile_model"
+					"value"				"models/weapons/w_models/w_rocketbeta.mdl"
+				}
+				"rocket whistle"
+				{
+					"attribute_class"	"rocket_whistle"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_Burster.Shoot"
+				"sound_burst"			"Weapon_Burster.ShootCrit"
+			}
+			"model_world"				"models/weapons/c_models/c_mortar/c_mortar.mdl"
+			"model_player"				"models/weapons/v_models/v_mortar/v_mortar_soldier.mdl"
+			"attach_to_hands"			"2"
+		}
+		"7100" // force a nature
+		{
+			"name"				"The Force-a-Nature"
+			"item_class"		"tf_weapon_scattergun"
+			"base_item_name"	"The Force-a-Nature"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Scattergun"
+			"item_name"			"Force-a-nature"
+			"item_description"	""
+			"item_logname"		"force_a_nature"
+			"item_iconname"		"force_a_nature"
+			"item_slot"			"primary"
+			"anim_slot"			"item2"
+			"propername"		"1"
+			"min_ilevel"		"10"
+			"max_ilevel"		"10"
+			"image_inventory"	"backpack/weapons/c_models/c_double_barrel/c_double_barrel"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"		"models/weapons/c_models/c_double_barrel.mdl"
+			"attach_to_hands" "1"
+			"used_by_classes"
+			{
+				"scout"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 0 -10"
+			}
+			"attributes"
+			{
+				"scattergun has knockback"
+				{
+					"attribute_class"	"set_scattergun_has_knockback"
+					"value"	"1"
+				}
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value" "0.5"
+				}
+				"bullets per shot bonus"
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value" "1.6666"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value" "0.7"
+				}
+				"clip size penalty"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value" "0.34"
+				}
+				"scattergun no reload single"
+				{
+					"attribute_class"	"set_scattergun_no_reload_single"
+					"value"	"1"
+				}
+				"disable fancy class select anim"
+				{
+					"attribute_class"	"disable_fancy_class_select_anim"
+					"value"	"1"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"	"Weapon_Scatter_Gun_Double.Single"
+				"sound_burst"	"Weapon_Scatter_Gun_Double.SingleCrit"
+				"muzzle_flash"	"muzzle_bignasty"
+				"tracer_effect"	"bullet_bignasty_tracer01"
+
+				"animation_replacement"
+				{
+					"ACT_VM_IDLE"						"ACT_ITEM2_VM_IDLE"
+					"ACT_VM_DRAW"						"ACT_ITEM2_VM_DRAW"
+					"ACT_VM_HOLSTER"					"ACT_ITEM2_VM_HOLSTER"
+					"ACT_VM_PULLBACK"					"ACT_ITEM2_VM_PULLBACK"
+					"ACT_VM_PRIMARYATTACK"				"ACT_ITEM2_VM_PRIMARYATTACK"
+					"ACT_VM_SECONDARYATTACK"			"ACT_ITEM2_VM_SECONDARYATTACK"
+					"ACT_VM_RELOAD"						"ACT_ITEM2_VM_RELOAD"
+					"ACT_VM_DRYFIRE"					"ACT_ITEM2_VM_DRYFIRE"
+					"ACT_VM_IDLE_TO_LOWERED"			"ACT_ITEM2_VM_IDLE_TO_LOWERED"
+					"ACT_VM_IDLE_LOWERED"				"ACT_ITEM2_VM_IDLE_LOWERED"
+					"ACT_VM_LOWERED_TO_IDLE"			"ACT_ITEM2_VM_LOWERED_TO_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_START"		"ACT_ITEM2_VM_INSPECT_START"
+					"ACT_PRIMARY_VM_INSPECT_IDLE"		"ACT_ITEM2_VM_INSPECT_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_END"		"ACT_ITEM2_VM_INSPECT_END"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
+		}
+		"7101" // shortstop
 		{
 			"name"						"shortstop"
 			"item_class"				"tf_weapon_scattergun"
@@ -3430,7 +3608,7 @@
 			"item_description"			"The latest in high-attitude personal defense!"
 			"item_logname"				"shortstop"
 			"item_iconname"				"shortstop"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_shortstop/c_shortstop"
+			"image_inventory"			"backpack/workshop/weapons/c_models/c_shortstop/c_shortstop_custom"
 			"model_world"				"models/workshop/weapons/c_models/c_shortstop/c_shortstop.mdl"
 			"model_player"				"models/weapons/v_models/v_shortstop/v_shortstop_scout_db.mdl"
 			"attach_to_hands"			"2"
@@ -3448,11 +3626,6 @@
 			}
 			"attributes"																		// Generally speaking, I tend to put the "visible" attributes down here, but Static Attrs works just fine too!
 			{
-				"taunt is highfive"
-				{
-					"attribute_class"	"enable_misc2_highfive"
-					"value"	"1"
-				}
 				"shortstop explain"
 				{
 					"attribute_class"	"VISUALONLY"
@@ -3491,12 +3664,15 @@
 			"mouse_pressed_sound"		"#items/pickup_small.wav"
 			"drop_sound"				"#ui/item_light_gun_drop.wav"
 		}
-		"2024" // The Silent Treatment
+		"7900" // The Silent Treatment
 		{
 			"name"				"silent treatment"
 			"item_name"			"Silent Treatment"
 			"item_type_name"	"Pistol"
-			"item_description"	"For when stealth is still an option."
+			"item_description"	"For when stealth is still an option.
+
+			Model by: 'Blaholtzen, SediSocks'
+			Animations by: 'Raptor Dan'"
 			"item_quality"		"normal"
 			"propername"	"1"
 			"item_class"	"tf_weapon_revolver"
@@ -3560,7 +3736,7 @@
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
-		"4016" // the gun spy
+		"7901" // the gun spy
 		{
 			"name"	"The Gun Spy"
 			"item_class"	"tf_weapon_knife"
@@ -3570,7 +3746,8 @@
 			"item_logname"	"Gun Spy"
 			"item_iconname"	"Gun Spy"
 			"item_slot"	"melee"
-			"item_description"			""
+			"item_description"			"Model by: 'Napy Da Wise'
+			Sounds by: 'Testsubject276'"
 			"propername"	"1"
 			"min_ilevel"	"10"
 			"max_ilevel"	"10"
@@ -3625,7 +3802,7 @@
 			"mouse_pressed_sound"	"ui/item_shovel_pickup.wav"
 			"drop_sound"		"ui/item_shovel_drop.wav"
 		}
-		"264"
+		"7400"
 		{
 			"name"	"Frying Pan"
 			"item_class"	"saxxy"
@@ -3679,65 +3856,7 @@
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
 			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
-		"154"
-		{
-			"name"	"The Pain Train"
-			"item_class"	"tf_weapon_shovel"
-			"item_logname"	"paintrain"
-			"item_iconname"	"paintrain"
-			"show_in_armory"	"1"
-			"item_type_name"	"#TF_Weapon_MakeshiftClub"
-			"item_name"	"#TF_Unique_Makeshiftclub"
-			"item_slot"	"melee"
-			"image_inventory"	"backpack/workshop/weapons/c_models/c_paintrain/c_paintrain"
-			"image_inventory_size_w"		"128"
-			"image_inventory_size_h"		"82"
-			"inspect_panel_dist" 				"55"
-			"model_player"	"models/workshop/weapons/c_models/c_paintrain/c_paintrain.mdl"
-			"attach_to_hands"	"1"
-			"item_quality"	"normal"
-			"propername"	"1"
-			"min_ilevel"	"5"
-			"max_ilevel"	"5"
-			"used_by_classes"
-			{
-				"soldier"	"1"
-			}
-			"static_attrs"
-			{
-				"min_viewmodel_offset"					"10 -3 -11"
-			}
-			"attributes"
-			{
-				"damage bonus"
-				{
-					"attribute_class"		"mult_dmg"
-					"value"				"1.35"
-				}
-				"hit self on miss"
-				{
-					"attribute_class"		"hit_self_on_miss"
-					"value"				"1"
-				}
-			}
-			"visuals"
-			{
-				"sound_melee_miss"	"Weapon_PickAxe.Swing"
-				"sound_melee_hit"	"Weapon_PickAxe.HitFlesh"
-				"sound_burst"		"Weapon_PickAxe.SwingCrit"
-				"sound_melee_hit_world"	"Weapon_Shovel.HitWorld"
-
-				"animation_replacement"
-				{
-					"ACT_MELEE_VM_INSPECT_START"	"ACT_MELEE_ALT1_VM_INSPECT_START"
-					"ACT_MELEE_VM_INSPECT_IDLE"		"ACT_MELEE_ALT1_VM_INSPECT_IDLE"
-					"ACT_MELEE_VM_INSPECT_END"		"ACT_MELEE_ALT1_VM_INSPECT_END"
-				}
-			}
-			"mouse_pressed_sound"	"ui/item_wood_pole_pickup.wav"
-			"drop_sound"		"ui/item_wood_pole_drop.wav"
-		}
-		"4742" // demo helmet
+		"7401" // demo helmet
 		{
 			"name"			"Scotch Bonnet"
 			"item_class"		"tf_wearable"
@@ -3782,7 +3901,7 @@
 			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
 			"drop_sound"		"ui/item_pack_drop.wav"
 		}
-		"307"
+		"7402"
 		{
 			"name"	"The Ullapool Caber"
 			"item_class"	"tf_weapon_stickbomb"
@@ -3838,7 +3957,7 @@
 				}
 			}
 		}
-		"4267" // double trouble
+		"7403" // double trouble
 		{
 			"name"						"double trouble"
 			"item_class"				"tf_weapon_grenadelauncher"
@@ -3847,7 +3966,7 @@
 			"item_iconname"				"double trouble"
 			"item_type_name"			"#TF_Weapon_GrenadeLauncher"
 			"item_name"					"Double Trouble"
-			"item_description"			"The "+10% damage bonus" is actually a 21% damage bonus because the tf2c devs in their infinite wisdom, somehow made it so giving damage bonus to grenades applies the bonus twice. Like what the fuck are they doing bruh."
+			"item_description"			"Model by: 'Hauu' and 'kibbleknight'"
 			"item_slot"					"primary"
 			"anim_slot"					"secondary"
 			"min_ilevel"				"10"
@@ -3932,14 +4051,13 @@
 				}
 			}
 		}
-		"2167" // eliminator
+		"7800" // eliminator
 		{
 			"name"				"efficient eliminator"
 			"item_name"			"Efficient Eliminator"
 			"item_type_name"	"SMG"
-			"item_description"	"
-me: man I wish there was a weapon that would allow me to eliminate efficiently
-the humble efficient eliminator:"
+			"item_description"	"Model by: 'Colteh'
+			Animations by: 'MrPurplePigeon'"
 			"item_quality"		"normal"
 			"item_class"		"tf_weapon_revolver"
 			"item_slot"			"primary"
@@ -3982,7 +4100,7 @@ the humble efficient eliminator:"
 				"maxammo secondary increased"
 				{
 					"attribute_class"		"mult_maxammo_secondary"
-					"value"				"7.5"
+					"value"				"5"
 				}
 				"damage penalty"
 				{
@@ -4024,7 +4142,7 @@ the humble efficient eliminator:"
 			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
-		"3758" // jarate
+		"7801" // jarate
 		{
 			"name"	"Jarate"
 			"item_class"	"tf_weapon_jar"
@@ -4086,99 +4204,25 @@ the humble efficient eliminator:"
 			"mouse_pressed_sound"	"ui/item_bottle_pickup.wav"
 			"drop_sound"		"ui/item_bottle_drop.wav"
 		}
-		"9021" // mortal mortar
+		"7600" // the micro manager
 		{
-			"name"				"mortal mortar"
-			"item_name"			"Mortal Mortar"
-			"item_type_name"	"#TF_Weapon_RocketLauncher"
-			"item_description"	"guh"
-			"item_quality"		"normal"
-			"image_inventory"			"backpack\workshop\weapons\c_models\c_mortar\c_mortar"
-			"item_class"	"tf_weapon_rocketlauncher"
-			"item_slot"		"primary"
-			"used_by_classes"
-			{
-				"Soldier"		"1"
-			}
-			"attributes"
-			{
-				"mortal mortar explain"
-				{
-					"attribute_class"		"VISUALONLY"
-					"value"				"1"
-				}
-				"mod mini-crit airborne"
-				{
-					"attribute_class"	"mini_crit_airborne"
-					"value" "1"
-				}
-				"damage bonus"
-				{
-					"attribute_class"		"mult_dmg"
-					"value"				"1.1075"
-				}
-				"Projectile speed increased"
-				{
-					"attribute_class"	"mult_projectile_speed"
-					"value"				"1.8"
-				}
-				"Blast radius decreased"
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"	"0.3"
-				}
-				"mortal mortar arc explain"
-				{
-					"attribute_class"		"VISUALONLY"
-					"value"				"1"
-				}
-				"hidden separator"		"1"
-								"no damage falloff over distance"
-				{
-					"attribute_class"	"mod_no_dmg_falloff"
-					"value"				"1"
-				}
-				"rocket gravity"
-				{
-					"attribute_class"	"mod_rocket_gravity"
-					"value"				"1"
-				}
-				"custom projectile model"
-				{
-					"attribute_class"	"custom_projectile_model"
-					"value"				"models/weapons/w_models/w_rocketbeta.mdl"
-				}
-				"rocket whistle"
-				{
-					"attribute_class"	"rocket_whistle"
-					"value"				"1"
-				}
-			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_Burster.Shoot"
-				"sound_burst"			"Weapon_Burster.ShootCrit"
-			}
-			"model_world"				"models/weapons/c_models/c_mortar/c_mortar.mdl"
-			"model_player"				"models/weapons/v_models/v_mortar/v_mortar_soldier.mdl"
-			"attach_to_hands"			"2"
-		}
-		"3155" // the heavy hitter
-		{
-			"name"	"The Micro Manager"
-			"item_class"	"tf_weapon_wrench"
+			"name"				"The Micro Manager"
+			"item_class"		"tf_weapon_wrench"
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_Wrench"
-			"item_name"	"Micro Managerr"
-			"item_description"	"It's not about the size of your sentry, it's about how you use it."
-			"item_slot"	"melee"
-			"item_quality"	"normal"
-			"min_ilevel"	"20"
-			"max_ilevel"	"20"
-			"propername"	"1"
-			"item_logname"	"Heavy Hitter"
-			"item_iconname"	"Heavy Hitter"
-			"inspect_panel_dist" 			"45"
+			"item_name"			"Micro Manager"
+			"item_description"	"It's not about the size of your sentry, it's about how you use it.
+
+			Model by: 'macripley'
+			Animations by: 'N-Cognito'"
+			"item_slot"			"melee"
+			"item_quality"		"normal"
+			"min_ilevel"		"20"
+			"max_ilevel"		"20"
+			"propername"		"1"
+			"item_logname"		"Micro Manager"
+			"item_iconname"		"Micro Manager"
+			"inspect_panel_dist" 		"45"
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"104"
 			"image_inventory"			"backpack/weapons/w_models/w_pdq"
@@ -4220,7 +4264,7 @@ the humble efficient eliminator:"
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
 			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
-		"642" // fatass
+		"4601" // fatass
 		{
 			"name"			"American Diet"
 			"item_class"		"tf_wearable"
@@ -4286,7 +4330,7 @@ the humble efficient eliminator:"
 			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
 			"drop_sound"		"ui/item_pack_drop.wav"
 		}
-		"9107" // engi nail gun
+		"4602" // engi nail gun
 		{
 		    "tags"
 			{
@@ -4304,7 +4348,9 @@ the humble efficient eliminator:"
 			"item_name_color"           "190 200 233 255"
 			"item_name"					"Nail Gun"
 			"item_type_name"			"Nail Gun"
-			"item_description"			"Nailed it."
+			"item_description"			"Nailed it.
+
+			Model by: 'Blaholtzen, SediSocks'"
 			"item_logname" 				"Great Peace Preserver"
 			"item_iconname" 			"Great Peace Preserver"
 			"model_world"				"models/weapons/w_models/w_enginailgun/w_necrotic_nailgun.mdl"
@@ -14834,7 +14880,48 @@ the humble efficient eliminator:"
 			"effect_type"			"negative"
 			"stored_as_integer"		"1"
 		}
-
+		"4014"
+		{
+			"name"					"heavy shotgun explain"
+			"attribute_class"		"explain"
+			"description_string"	"-50 health on wearer"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4015"
+		{
+			"name"					"air superiority explain"
+			"attribute_class"		"explain"
+			"description_string"	"Airblasting teammates gives a speedboost to you and affected teammates"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4016"
+		{
+			"name"					"lead storm explain"
+			"attribute_class"		"explain"
+			"description_string"	"+30% movement speed while spun up
+			+50% max primary ammo
+			+20% more accurate"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4017"
+		{
+			"name"					"lead storm explain 2"
+			"attribute_class"		"explain"
+			"description_string"	"-75% bullets per shot"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
 	}
 	"attribute_controlled_attached_particles"
 	{
