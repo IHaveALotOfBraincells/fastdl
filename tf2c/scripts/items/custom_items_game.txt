@@ -530,7 +530,6 @@
 			{
 				"Demoman"		"1"
 			}
-
 			"model_player"		"models/weapons/v_models/v_grenadelauncher_demo.mdl"
 			"model_world"		"models/weapons/w_models/w_grenadelauncher.mdl"
 			"anim_slot"			"secondary"
@@ -2816,6 +2815,57 @@
 			"mouse_pressed_sound"	"ui/item_heavy_emp_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
+		"411" // quickfix
+		{
+			"name"				"quickfix"
+			"item_name"			"Quick-Fix"
+			"item_type_name"	"#TF_Weapon_MediGun"
+			"item_description"	"I have no idea what to put here."
+			"item_quality"		"normal"
+
+			"item_class"	"tf_weapon_medigun"
+			"item_slot"		"secondary"
+			"used_by_classes"
+			{
+				"Medic"	"1"
+			}
+
+			"model_player"		"models/weapons/c_models/c_proto_medigun/c_proto_medigun.mdl"
+			"model_world"		"models/weapons/c_models/c_proto_medigun/c_proto_medigun.mdl"
+			"attach_to_hands"	"1"
+			"extra_wearable" 	"models/player/items/medic_backpack.mdl"
+			"equip_region"		"medigun_backpack"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -9"
+			}
+			"attributes"
+			{
+				"heal rate bonus"
+				{
+					"attribute_class"	"mult_medigun_healrate"
+					"value" "1.4"
+				}
+				"medigun charge is megaheal"
+				{
+					"attribute_class"	"set_charge_type"
+					"value"	"2"
+				}
+				"ubercharge rate bonus"
+				{
+					"attribute_class"	"mult_medigun_uberchargerate"
+					"value"	"1.1"
+				}
+				"overheal penalty"
+				{
+					"attribute_class"	"mult_medigun_overheal_amount"
+					"value"	"0.5"
+				}
+			}
+			"image_inventory"	"backpack/weapons/c_models/c_proto_medigun/c_proto_medigun"
+			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
+			"drop_sound"			"ui/item_heavy_gun_drop.wav"
+		}
 		"4667" // Combat Syringe Gun
 		{
 			"name"				"mp40"
@@ -2894,6 +2944,82 @@
 			"image_inventory"		"backpack/weapons/c_models/mp40/c_mp40"
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
+		}
+		"3732" // Air Superiority
+		{
+			"name"				"air superiority"
+			"item_name"			"Air Superiority"
+			"item_type_name"	"#TF_Weapon_FlameThrower"
+			"item_description"	"Airblast teammates to give them and yourself a speed boost."
+			"item_quality"		"normal"
+
+			"item_class"	"tf_weapon_flamethrower"
+			"item_slot"		"primary"
+			"used_by_classes"
+			{
+				"Pyro"	"1"
+			}
+
+			"model_world"				"models/weapons/w_models/w_afterburner/w_afterburner.mdl"
+			"model_player"				"models/weapons/v_models/v_afterburner/v_afterburner_pyro.mdl"
+			"attach_to_hands"	"1"
+			"static_attrs"
+			{
+				"flamethrower explain"			"1"
+				"min_viewmodel_offset"	"10 0 -10"
+
+				"flame_gravity"					"0"
+				"flame_drag"					"8.500000"
+				"flame_up_speed"				"50"
+				"flame_speed"					"2450"
+				"flame_spread_degree"			"2.800000"
+				"flame_lifetime"				"0.600000"
+				"flame_random_life_time_offset"	"0.100000"
+				"flame_velocity_fade_start"		"0.300000"
+				"flame_velocity_fade_end"		"0.500000"
+			}
+			"attributes"
+			{
+				"airblast_give_teammate_speed_boost"
+				{
+					"attribute_class"	"airblast_give_teammate_speed_boost"
+					"value"	"1"
+				}
+				"airblast cost decreased"
+				{
+					"attribute_class"	"mult_airblast_cost"
+					"value"	"0.5"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"	"0.65"
+				}
+				"weapon burn dmg reduced"
+				{
+					"attribute_class"	"mult_wpn_burndmg"
+					"value"	"0.666"
+				}
+			}
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"	"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+				}
+				"sound_single_shot"		"Weapon_AfterBurner.FireStart"
+//				"sound_special1"		"Weapon_AfterBurner.FireLoop"
+				"sound_reload"			"Weapon_AfterBurner.FireLoop"
+				"sound_special3"		"Weapon_AfterBurner.WindDown"
+				"sound_double_shot"		"Weapon_AfterBurner.AirBurstAttack"
+				"sound_burst"			"Weapon_AfterBurner.FireLoopCrit"
+			}
+
+			"image_inventory"			"backpack/weapons/w_models/w_afterburner"
+			"mouse_pressed_sound"	"ui/item_flamethrower_pickup.wav"
+			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
 		"6721" // firehose
 		{
@@ -3040,128 +3166,6 @@
 				"sound_burst"	"MVM.GiantHeavyGunFire"
 			}
 		}
-		"4277" // chocolate
-		{
-			"name"				"chocolate bar"
-			"item_name"			"Dalokohs Bar"
-			"item_type_name"	"#TF_Weapon_LunchBox"
-			"item_description"	"yummers"
-			"item_quality"		"normal"
-
-			"item_class"	"tf_weapon_lunchbox"
-			"item_slot"		"secondary"
-			"used_by_classes"
-			{
-				"Heavy"		"1"
-			}
-			"attributes"
-			{
-				"dalokohs explain"		"1"
-
-				"special taunt"
-				{
-					"attribute_class"	"special_taunt"
-					"value"				"1"
-				}
-				"allowed in medieval mode"
-				{
-					"attribute_class"	"allowed_in_medieval_mode"
-					"value"				"1"
-				}
-				"gesture speed increase"
-				{
-					"attribute_class"	"mult_gesture_time"
-					"value"				"2"
-				}
-				"custom lunchbox throwable type"
-				{
-					"attribute_class"	"custom_lunchbox_throwable_type"
-					"value"				"1"
-				}
-				"custom lunchbox throwable model"
-				{
-					"attribute_class"	"custom_lunchbox_throwable_model"
-					"value"				"models/items/plate_chocolate.mdl"
-				}
-				"mod lunchbox critboostable"
-				{
-					"attribute_class" 	"mod_lunchbox_critboostable"
-					"value"				"1"
-				}
-			}
-
-			"model_player"			"models/workshop/weapons/c_models/c_chocolate/c_chocolate.mdl"
-			"model_world"			"models/workshop/weapons/c_models/c_chocolate/c_chocolate.mdl"
-			"anim_slot"				"ITEM1"
-			"extra_wearable"		"models/player/items/sandvich_lunchbox.mdl"
-			"attach_to_hands"		"1"
-			"static_attrs"
-			{
-				"min_viewmodel_offset"	"10 0 -11"
-
-				"item_meter_charge_type"	"1"
-				"item_meter_charge_rate"	"30"
-				"meter_label"				"#TF_Meter_LunchBox"
-			}
-			"visuals"
-			{
-				"animation_replacement"
-				{
-					"ACT_SECONDARY_VM_INSPECT_START"	"ACT_ITEM1_VM_INSPECT_START"
-					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM1_VM_INSPECT_IDLE"
-					"ACT_SECONDARY_VM_INSPECT_END"		"ACT_ITEM1_VM_INSPECT_END"
-				}
-			}
-
-			"image_inventory"		"backpack/workshop/weapons/c_models/c_chocolate/c_chocolate"
-			"mouse_pressed_sound"	"ui/item_sandwich_drop.wav"
-			"drop_sound"			"ui/item_sandwich_pickup.wav"
-		}
-		"2642"
-		{
-			"name"			"Supply Pouches"
-			"item_class"		"tf_wearable"
-			"show_in_armory"	"1"
-			"item_type_name" 	"Supply belt"
-			"item_name"	"(rc) Supply Pouches"
-			"item_description"	""
-			"item_slot"		"secondary"
-			"equip_region"	"back"
-			"anim_slot"	"FORCE_NOT_USED"
-			"item_quality"		"normal"
-			"propername"		"0"
-			"min_ilevel"		"10"
-			"max_ilevel"		"10"
-			"image_inventory"	"backpack/workshop/player/items/heavy/jul13_bagdolier/jul13_bagdolier"
-			"image_inventory_size_w"		"128"
-			"image_inventory_size_h"		"82"
-			"model_player"	"models/workshop/player/items/heavy/jul13_bagdolier/jul13_bagdolier.mdl"
-			"extra_wearable" "models/workshop/player/items/heavy/jul13_bagdolier/jul13_bagdolier.mdl"
-			"used_by_classes"
-			{
-				"heavy"	"1"
-			}
-			"attributes"
-			{
-				"health regen"
-				{
-					"attribute_class"	"add_health_regen"
-					"value"	"4"
-				}
-				"allowed in medieval mode"
-				{
-					"attribute_class"	"allowed_in_medieval_mode"
-					"value"	"1"
-				}
-				"maxammo primary increased"
-				{
-					"attribute_class"	"mult_maxammo_primary"
-					"value"	"1.5"
-				}
-			}
-			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
-			"drop_sound"		"ui/item_pack_drop.wav"
-		}
 		"9140"
 		{
 		    "name"						"Heavy Shotgun"
@@ -3240,8 +3244,8 @@
 			}
 			"visuals"
 			{
-			    "sound_single_shot"		"Weapon_ScoutTenGauge.Fire"
-				"sound_burst"			"Weapon_ScoutTenGauge.FireCrit"
+			    "sound_single_shot"		"Weapon_HuntingShotgun.Fire"
+				"sound_burst"			"Weapon_HuntingShotgun.FireCrit"
 			}
 			"mouse_pressed_sound"		"#ui/item_pack_pickup.wav"
 			"drop_sound"				"#ui/item_pack_drop.wav"
@@ -3344,16 +3348,6 @@
 					"attribute_class"	"boots_falling_stomp"
 					"value" "1"
 				}
-				"kill eater score type"
-				{
-					"attribute_class"	"kill_eater_score_type"
-					"value"	"26"
-				}
-				"kill eater kill type"
-				{
-					"attribute_class"	"kill_eater_kill_type"
-					"value"	"26"
-				}
 				"allowed in medieval mode"
 				{
 					"attribute_class"	"allowed_in_medieval_mode"
@@ -3444,16 +3438,21 @@
 			{
 				"scout"					"1"
 			}
-			"static_attrs"																		// Static attributes! To keep things semi-short, I'll shove backend stuff up here if I can possibly do so.
+			"static_attrs"
 			{
 				"min_viewmodel_offset"	"10 0 -11"
 				"class select override vcd"				"class_select_nailgun"					// The Nailgun select looks a lot more neutral than his Scattergun one - it's good for this wep.
 				"clip size penalty hidden"				"0.7"									// 4 shots!
 				"fire rate penalty hidden"				"0.576"									// Boost fire rate to match Shortstop's
-				"damage bonus hidden"					"1.73"									// If all pellets hit, point-blank, does about 72 damage, give or take.
+				"damage bonus hidden"					"1.73"
 			}
 			"attributes"																		// Generally speaking, I tend to put the "visible" attributes down here, but Static Attrs works just fine too!
 			{
+				"taunt is highfive"
+				{
+					"attribute_class"	"enable_misc2_highfive"
+					"value"	"1"
+				}
 				"shortstop explain"
 				{
 					"attribute_class"	"VISUALONLY"
@@ -3544,7 +3543,7 @@
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.55"
+					"value"				"0.6"
 				}
 				"crit_dmg_falloff"
 				{
@@ -3848,11 +3847,11 @@
 			"item_iconname"				"double trouble"
 			"item_type_name"			"#TF_Weapon_GrenadeLauncher"
 			"item_name"					"Double Trouble"
+			"item_description"			"The "+10% damage bonus" is actually a 21% damage bonus because the tf2c devs in their infinite wisdom, somehow made it so giving damage bonus to grenades applies the bonus twice. Like what the fuck are they doing bruh."
 			"item_slot"					"primary"
 			"anim_slot"					"secondary"
 			"min_ilevel"				"10"
 			"max_ilevel"				"10"
-			"propername"				"0"
 			"attach_to_hands"	"		1"
 			"inspect_panel_dist" 		"55"
 			"image_inventory"			"backpack/weapons/w_models/w_cyclops_dbl"
@@ -3873,10 +3872,11 @@
 			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 			"attributes"
 			{
+				"pipes surface explode explain" "1"
 				"damage bonus"
 				{
 					"attribute_class"		"mult_dmg"
-					"value"				"1.2"
+					"value"				"1.1"
 				}
 				"Projectile speed increased"
 				{
@@ -3898,11 +3898,6 @@
 					"attribute_class"	"mult_explosion_radius"
 					"value"	"0.5"
 				}
-				"pipes surface explode explain"
-				{
-					"attribute_class"		"pipes_surface_explode_explain"
-					"value"				"1"
-				}
 				"grenade no spin"
 				{
 					"attribute_class"	"grenade_no_spin"
@@ -3917,12 +3912,12 @@
 				"self dmg push force increased"
 				{
 					"attribute_class"	"mult_dmgself_push_force"
-					"value" 			"0.75"
+					"value" 			"0.65"
 				}
 				"blast dmg to self increased"
 				{
 					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0.65"
+					"value"				"0.6"
 				}
 			}
 			"visuals"
@@ -3946,11 +3941,10 @@
 me: man I wish there was a weapon that would allow me to eliminate efficiently
 the humble efficient eliminator:"
 			"item_quality"		"normal"
-			// "extra_wearable"	"models/workshop/player/items/spy/sum23_cleaners_cap_style1/sum23_cleaners_cap_style1.mdl"
-			"item_class"	"tf2c_weapon_hunting_revolver"
-			"item_slot"		"primary"
-			"anim_slot"		"secondary"
-			"extra_wearable" "models/player/items/sniper/pro_hat.mdl"
+			"item_class"		"tf_weapon_revolver"
+			"item_slot"			"primary"
+			"anim_slot"			"secondary"
+			"extra_wearable" 	"models/player/items/sniper/pro_hat.mdl"
 			"used_by_classes"
 			{
 				"Sniper"	"1"
@@ -3962,31 +3956,43 @@ the humble efficient eliminator:"
 					"attribute_class"	"add_maxhealth"
 					"value"				"25"
 				}
+				"headshot minicrit explain"	"1"
+				"eliminator explain"	"1"
 				"hidden separator"	"1"
-				"sniper zoom penalty"
+				"can headshot"
 				{
-					"attribute_class"	"mult_zoom_fov"
-					"value"				"0.35"
+					"attribute_class"		"can_headshot"
+					"value"				"1"
+				}
+				"weapon spread bonus"
+				{
+					"attribute_class"		"mult_spread_scale"
+					"value"				"0.85"
 				}
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.135"
+					"value"				"0.18"
 				}
 				"clip size bonus"
 				{
 					"attribute_class"	"mult_clipsize"
-					"value"				"4.2"
+					"value"				"5"
 				}
-				"hidden primary max ammo bonus"
+				"maxammo secondary increased"
 				{
-					"attribute_class"	"mult_maxammo_primary"
-					"value"				"4.15"
+					"attribute_class"		"mult_maxammo_secondary"
+					"value"				"7.5"
 				}
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.3"
+					"value"				"0.2375"
+				}
+				"longer damage falloff distance"
+				{
+					"attribute_class"	"mult_damage"
+					"value"				"1.4"
 				}
 				"headshot is minicrit"
 				{
@@ -3994,7 +4000,6 @@ the humble efficient eliminator:"
 					"value"				"1"
 				}
 			}
-
 			"model_world"				"models/weapons/v_models/v_eliminator_smg/v_clipper_smg_sniper.mdl"
 			"model_player"				"models/weapons/v_models/v_eliminator_smg/v_clipper_smg_sniper.mdl"
 			"attach_to_hands"			"2"
@@ -4061,11 +4066,6 @@ the humble efficient eliminator:"
 				{
 					"attribute_class"	"desc_jarate_description"
 					"value"	"1"
-				}
-				"kill eater score type"
-				{
-					"attribute_class"	"kill_eater_score_type"
-					"value" 	"4"
 				}
 				"extinguish reduces cooldown"
 				{
@@ -4165,12 +4165,12 @@ the humble efficient eliminator:"
 		}
 		"3155" // the heavy hitter
 		{
-			"name"	"The Heavy Hitter"
+			"name"	"The Micro Manager"
 			"item_class"	"tf_weapon_wrench"
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_Wrench"
-			"item_name"	"Heavy Hitter"
-			"item_description"	"It doesn't actually create a heavy sentry I need to figure out how to change the backpack icon"
+			"item_name"	"Micro Managerr"
+			"item_description"	"It's not about the size of your sentry, it's about how you use it."
 			"item_slot"	"melee"
 			"item_quality"	"normal"
 			"min_ilevel"	"20"
@@ -4181,10 +4181,10 @@ the humble efficient eliminator:"
 			"inspect_panel_dist" 			"45"
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"104"
-			"image_inventory"			"backpack/weapons/c_models/c_nailbiter/c_nailbiter_new"
-			"model_world"				"models/weapons/c_models/c_nailbiter/c_nailbiter.mdl"
-			"model_player"				"models/weapons/c_models/c_nailbiter/c_nailbiter.mdl"
-			"attach_to_hands" "1"
+			"image_inventory"			"backpack/weapons/w_models/w_pdq"
+			"model_world"				"models/weapons/w_models/w_pdq/w_pdq.mdl"
+			"model_player"				"models/weapons/v_models/v_pdq/v_pdq_engineer.mdl"
+			"attach_to_hands" "2"
 			"used_by_classes"
 			{
 				"engineer"	"1"
@@ -4195,45 +4195,26 @@ the humble efficient eliminator:"
 			}
 			"attributes"
 			{
-				"damage bonus"
+				"build small sentries"
 				{
-					"attribute_class"		"mult_dmg"
-					"value" 	"1.2"
+					"attribute_class"		"build_small_sentries"
+					"value" 	"1"
 				}
-				"dmg bonus vs buildings"
+				"engineer sentry build rate multiplier"
 				{
-					"attribute_class"		"mult_dmg_vs_buildings"
-					"value" 	"2.0"
+					"attribute_class"		"sentry_build_rate_multiplier"
+					"value" 	"1.35"
 				}
-				"Repair rate decreased"
+				"hidden separator" "1"
+				"mod sentrygun cost"
 				{
-					"attribute_class"		"mult_repair_value"
-					"value" 	"0.8"
+					"attribute_class"		"mod_sentrygun_cost"
+					"value" 	"0.769230769231"
 				}
-				"Construction rate decreased"
+				"engy sentry damage bonus"
 				{
-					"attribute_class"		"mult_construction_value"
-					"value" 	"0.8"
-				}
-				"kill eater score type"
-				{
-					"attribute_class"	"kill_eater_score_type"
-					"value" 	"0"
-				}
-				"kill eater score type 2"
-				{
-					"attribute_class"	"kill_eater_score_type_2"
-					"value" 	"3"
-				}
-			}
-			"visuals"
-			{
-				"animation_replacement"
-				{
-					"ACT_VM_IDLE"	"ACT_ITEM3_VM_IDLE"
-					"ACT_VM_DRAW"	"ACT_ITEM3_VM_DRAW"
-					"ACT_VM_HITCENTER"	"ACT_ITEM3_VM_HITCENTER"
-					"ACT_VM_SWINGHARD"	"ACT_ITEM3_VM_SWINGHARD"
+					"attribute_class"		"mult_engy_sentry_damage"
+					"value" 	"0.6"
 				}
 			}
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
@@ -4241,17 +4222,17 @@ the humble efficient eliminator:"
 		}
 		"642" // fatass
 		{
-			"name"			"American Influence"
+			"name"			"American Diet"
 			"item_class"		"tf_wearable"
 			"show_in_armory"	"1"
 			"item_type_name" 	"Obesity"
-			"item_name"	"American Influence"
+			"item_name"	"American Diet"
 			"item_description"	"Morbidly a beast."
 			"item_slot"		"secondary"
 			"equip_region"	"back"
 			"anim_slot"	"FORCE_NOT_USED"
 			"item_quality"		"normal"
-			"propername"		"0"
+			"propername"		"1"
 			"min_ilevel"		"10"
 			"max_ilevel"		"10"
 			"image_inventory"	"backpack/workshop/player/items/engineer/short2014_engineer_nerd_chin/short2014_engineer_nerd_chin"
@@ -4275,11 +4256,27 @@ the humble efficient eliminator:"
 					"attribute_class"	"add_health_regen"
 					"value"	"4"
 				}
-				"maxammo metal reduced"
+				"build rate bonus"
 				{
-					"attribute_class"		"mult_maxammo_metal"
-					"value"				"0.5"
+					"attribute_class"	"mod_build_rate"
+					"value"	"0.9"
 				}
+				"buildings max level penalty"
+				{
+					"attribute_class"	"add_buildings_max_level"
+					"value"	"-2"
+				}
+				"american diet explain" "1"
+				//"mod sentrygun cost"
+				//{
+				//	"attribute_class"	"mod_sentrygun_cost"
+				//	"value"	"52.055"
+				//}
+				//"maxammo metal reduced"
+				//{
+				//	"attribute_class"		"mult_maxammo_metal"
+				//	"value"				"0.5"
+				//}
 				"allowed in medieval mode"
 				{
 					"attribute_class"	"allowed_in_medieval_mode"
@@ -4288,88 +4285,6 @@ the humble efficient eliminator:"
 			}
 			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
 			"drop_sound"		"ui/item_pack_drop.wav"
-		}
-		"6742" // rescue ranger
-		{
-			"name"	"The Rescue Ranger"
-			"item_class"	"tf_weapon_shotgun_building_rescue"
-			"show_in_armory"	"1"
-			"item_logname"	"rescue_ranger"
-			"item_iconname"	"rescue_ranger"
-			"item_type_name"	"#TF_Weapon_Shotgun"
-			"item_name"	"#TF_Weapon_Shotgun_Building_Rescue"
-			"item_slot"	"primary"
-			"item_quality"	"normal"
-			"propername"	"1"
-			"min_ilevel"	"1"
-			"max_ilevel"	"100"
-			"attach_to_hands"	"1"
-			"inspect_panel_dist" "45"
-			"image_inventory"	"backpack/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun"
-			"image_inventory_size_w"		"128"
-			"image_inventory_size_h"		"82"
-			"model_player"	"models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun.mdl"
-			"used_by_classes"
-			{
-				"engineer"	"1"
-			}
-			"static_attrs"
-			{
-				"min_viewmodel_offset"			"10 0 -10"
-				"weapon_stattrak_module_scale"		"0.608"
-			}
-			"attributes"
-			{
-				"engineer building teleporting pickup"
-				{
-					"attribute_class"	"building_teleporting_pickup"
-					"value"	"100"
-				}
-				"arrow heals buildings"
-				{
-					"attribute_class"	"arrow_heals_buildings"
-					"value"				"60"
-				}
-				"override projectile type"
-				{
-					"attribute_class"	"override_projectile_type"
-					"value"				"18"
-				}
-				"mark for death on building pickup"
-				{
-					"attribute_class"	"mark_for_death_on_building_pickup"
-					"value"				"1"
-				}
-				"maxammo primary reduced"
-				{
-					"attribute_class"	"mult_maxammo_primary"
-					"value"				"0.5"
-				}
-				"clip size penalty"
-				{
-					"attribute_class"	"mult_clipsize"
-					"value"				"0.66"
-				}
-				"repair health to metal ratio DISPLAY ONLY"
-				{
-					"attribute_class"	"repair_health_to_metal_ratio_DISPLAY_ONLY"
-					"value"				"4"
-				}
-			}
-			"visuals"
-			{
-				"attached_models"
-				{
-					"0"
-					{
-						"model"	"models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun_screen.mdl"
-					}
-				}
-				"sound_single_shot"	"Weapon_RescueRanger.Single"
-				"sound_burst"    "Weapon_RescueRanger.SingleCrit"
-			}
-			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
-			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 		}
 		"9107" // engi nail gun
 		{
@@ -4389,7 +4304,7 @@ the humble efficient eliminator:"
 			"item_name_color"           "190 200 233 255"
 			"item_name"					"Nail Gun"
 			"item_type_name"			"Nail Gun"
-			"item_description"			""
+			"item_description"			"Nailed it."
 			"item_logname" 				"Great Peace Preserver"
 			"item_iconname" 			"Great Peace Preserver"
 			"model_world"				"models/weapons/w_models/w_enginailgun/w_necrotic_nailgun.mdl"
@@ -13456,7 +13371,7 @@ the humble efficient eliminator:"
 		{
 			"name"	"buildings max level penalty"
 			"attribute_class"	"add_buildings_max_level"
-			"description_string"	"#Attrib_BuildingsMaxLevel"
+			"description_string"	"cannot upgrade buildings"
 			"description_format"	"value_is_additive"
 			"hidden"	"0"
 			"effect_type"	"negative"
@@ -14879,6 +14794,47 @@ the humble efficient eliminator:"
 			"description_format"	"value_is_additive"
 			"effect_type"			"neutral"
 		}
+		"4010"
+		{
+			"name"					"build small sentries"
+			"attribute_class"		"build_small_sentries"
+			"description_string"	"Replaces the Sentry with a smaller and cheaper, but less powerful Sentry"
+			"description_format"	"value_is_additive"
+			"effect_type"			"netrual"
+			"hidden"				"0"
+			"stored_as_integer"		"1"
+		}
+		"4011"
+		{
+			"name"					"american diet explain"
+			"attribute_class"		"american_diet_explain"
+			"description_string"	"+100% risk of heart failure"
+			"description_format"	"value_is_additive"
+			"effect_type"			"negative"
+			"hidden"				"0"
+			"stored_as_integer"		"1"
+		}
+		"4012"
+		{
+			"name"					"headshot minicrit explain"
+			"attribute_class"		"explain"
+			"description_string"	"Deals mini-crits on headshot"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4013"
+		{
+			"name"					"eliminator explain"
+			"attribute_class"		"explain"
+			"description_string"	"Shares ammo pool with the SMG"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+
 	}
 	"attribute_controlled_attached_particles"
 	{

@@ -11311,6 +11311,52 @@
 }
 
 // ------------------------------------------------------------------------------------ //
+// Air Superiority
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_AirSuperiority.FireStart"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/afterburner_start.wav"
+}
+
+"Weapon_AirSuperiority.FireLoop"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/afterburner_loop.wav"
+}
+
+"Weapon_AirSuperiority.FireLoopCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/afterburner_loop_crit.wav"
+}
+
+"Weapon_AirSuperiority.WindDown"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".8"
+	"pitch"		"110, 112"
+	"wave"		"weapons/afterburner_end.wav"
+}
+
+"Weapon_AirSuperiority.AirBurstAttack"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".8"
+	"pitch"		"110, 112"
+	"wave"		"weapons/afterburner_airblast.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
 // AK CANNON
 // ------------------------------------------------------------------------------------ //
 
