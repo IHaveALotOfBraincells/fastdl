@@ -2816,14 +2816,14 @@
 			"mouse_pressed_sound"	"ui/item_heavy_emp_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
-		"7700" // quickfix
+		"7700" // adrenaline rush
 		{
-			"name"				"quickfix"
-			"item_name"			"Quick-Fix"
+			"name"				"adrenaline rush"
+			"item_name"			"Adrenaline Rush"
 			"item_type_name"	"#TF_Weapon_MediGun"
-			"item_description"	"I have no idea what to put here."
+			"item_description"	"Model by: 'Haau'"
 			"item_quality"		"normal"
-
+		//	"propername" 		"1"
 			"item_class"	"tf_weapon_medigun"
 			"item_slot"		"secondary"
 			"used_by_classes"
@@ -2831,8 +2831,8 @@
 				"Medic"	"1"
 			}
 
-			"model_player"		"models/weapons/c_models/c_proto_medigun/c_proto_medigun.mdl"
-			"model_world"		"models/weapons/c_models/c_proto_medigun/c_proto_medigun.mdl"
+			"model_player"		"models/weapons/c_models/c_anesthetizer/c_anesthetizer.mdl"
+			"model_world"		"models/weapons/c_models/c_anesthetizer/c_anesthetizer.mdl"
 			"attach_to_hands"	"1"
 			"extra_wearable" 	"models/player/items/medic_backpack.mdl"
 			"equip_region"		"medigun_backpack"
@@ -2842,44 +2842,24 @@
 			}
 			"attributes"
 			{
-				"heal rate bonus"
+				"adrenaline rush explain" "1"
+				"mod ubercharge cond"
 				{
-					"attribute_class"	"mult_medigun_healrate"
-					"value" "1.4"
-				}
-				"medigun charge is megaheal"
-				{
-					"attribute_class"	"set_charge_type"
-					"value"	"2"
+					"attribute_class"	"mod_ubercharge_cond"
+					"value" "137"
 				}
 				"ubercharge rate bonus"
 				{
 					"attribute_class"	"mult_medigun_uberchargerate"
-					"value"	"1.1"
+					"value" "1.75"
 				}
-				"overheal penalty"
-				{
-					"attribute_class"	"mult_medigun_overheal_amount"
-					"value"	"0.5"
-				}
+				//"charge time increased"
+				//{
+				//	"attribute_class"	"mod_charge_time"
+				//	"value" "67"
+				//}
 			}
-			"visuals_red"
-			{
-				"skin" "0"
-				"custom_particlesystem"
-				{
-					"system"	"medicgun_beam_attrib_overheal_red"
-				}
-			}
-			"visuals_blu"
-			{
-				"skin" "1"
-				"custom_particlesystem"
-				{
-					"system"	"medicgun_beam_attrib_overheal_blue"
-				}
-			}
-			"image_inventory"	"backpack/weapons/c_models/c_proto_medigun/c_proto_medigun"
+			"image_inventory"		"backpack/weapons/c_models/c_anesthetizer/c_medigun_large.vtf"
 			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
@@ -2962,6 +2942,42 @@
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
+		"7702" // medic helmet
+		{
+			"name"				"medic helmets"
+			"item_class"		"tf_wearable"
+			"show_in_armory"	"1"
+			"item_type_name" 	"Helmet"
+			"item_name"			"A Helmet"
+			//"item_description"	""
+			"item_slot"			"primary"
+			"equip_region"		"hat"
+			"anim_slot"			"FORCE_NOT_USED"
+			"item_quality"		"normal"
+			"propername"		"0"
+			"min_ilevel"		"10"
+			"max_ilevel"		"10"
+			"image_inventory"	"backpack/player/items/medic/fwk_medic_stahlhelm"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"	"models/player/items/medic/fwk_medic_stahlhelm.mdl"
+			"extra_wearable" "models/player/items/medic/fwk_medic_stahlhelm.mdl"
+			"used_by_classes"
+			{
+				"medic"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"0 0 -8"
+				"max health additive bonus" "1.01"
+			}
+			"attributes"
+			{
+				"medic helmet explain" "1"
+			}
+			"mouse_pressed_sound"	"ui/item_pack_pickup.wav"
+			"drop_sound"		"ui/item_pack_drop.wav"
+		}
 		"7300" // Air Superiority
 		{
 			"name"				"air superiority"
@@ -3039,6 +3055,79 @@
 			"image_inventory"			"backpack/weapons/w_models/w_afterburner"
 			"mouse_pressed_sound"	"ui/item_flamethrower_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
+		}
+		"7301" // spitfire
+		{
+			"name"				"spitfire"
+			"item_name"			"Spitfire"
+			"item_type_name"	"#TF_Weapon_FlareGun"
+			"item_description"	"Model by: 'NeoDement'"
+			"item_quality"		"normal"
+
+			"item_class"		"tf_weapon_flaregun"
+			"item_slot"			"secondary"
+			"used_by_classes"
+			{
+				"Pyro"	"1"
+			}
+			"attributes"
+			{
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value" "1"
+				}
+				"crit_vs_burning_FLARES_DISPLAY_ONLY"
+				{
+					"attribute_class"	"crit_vs_burning_FLARES_DISPLAY_ONLY"
+					"value"				"1"
+				}
+				"Projectile speed increased"
+				{
+					"attribute_class"	"mult_projectile_speed"
+					"value"				"1.25"
+				}
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.2"
+				}
+				"spitfire explain" "1"
+				"maxammo secondary reduced"
+				{
+					"attribute_class"	"mult_maxammo_secondary"
+					"value"				"0.5"
+				}
+				"hidden separator" "1"
+				"weapon burn time reduced"
+				{
+					"attribute_class"	"mult_wpn_burntime"
+					"value"	"-200"
+				}
+				"reload while not active explain"	"1"
+			}
+
+			"model_player"		"models/weapons/c_models/c_spitfire/c_spitfire.mdl"
+			"model_world"		"models/weapons/c_models/c_spitfire/c_spitfire.mdl"
+			"anim_slot"			"ITEM1"
+			"attach_to_hands"	"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -10"
+			}
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_SECONDARY_VM_INSPECT_START"	"ACT_ITEM1_VM_INSPECT_START"
+					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM1_VM_INSPECT_IDLE"
+					"ACT_SECONDARY_VM_INSPECT_END"		"ACT_ITEM1_VM_INSPECT_END"
+				}
+			}
+
+			"image_inventory"		"backpack/weapons/c_models/c_spitfire/c_spitfire_large.vtf"
+			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
+			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
 		"7500"
 		{
@@ -14887,6 +14976,14 @@ Animations by: 'Kylul'"
 			"effect_type"			"positive"
 			"stored_as_integer"		"0"
 		}
+		"5250"
+		{
+			"name"					"mod ubercharge cond"
+			"attribute_class"		"mod_ubercharge_cond"
+			"description_format"	"value_is_additive"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"0"
+		}
 		"4001"
 		{
 			"name"					"caber explain"
@@ -15073,6 +15170,37 @@ Animations by: 'Kylul'"
 			"name"					"slugger explain 2"
 			"attribute_class"		"explain"
 			"description_string"	"-22% damage"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4020"
+		{
+			"name"					"adrenaline rush explain"
+			"attribute_class"		"explain"
+			"description_string"	"Ubercharge grants haste"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"1"
+		}
+		"4021"
+		{
+			"name"					"medic helmet explain"
+			"attribute_class"		"explain"
+			"description_string"	"That's all it does, nothing more. Fuck you sniper."
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"1"
+		}
+		"4022"
+		{
+			"name"					"spitfire explain"
+			"attribute_class"		"explain"
+			"description_string"	"No afterburn
+			Extinguishes burning enemies"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"negative"
