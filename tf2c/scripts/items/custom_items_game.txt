@@ -2821,9 +2821,8 @@
 			"name"				"adrenaline rush"
 			"item_name"			"Adrenaline Rush"
 			"item_type_name"	"#TF_Weapon_MediGun"
-			"item_description"	"Model by: 'Haau'"
+			"item_description"	"Model by: 'Svdl'"
 			"item_quality"		"normal"
-		//	"propername" 		"1"
 			"item_class"	"tf_weapon_medigun"
 			"item_slot"		"secondary"
 			"used_by_classes"
@@ -2831,10 +2830,10 @@
 				"Medic"	"1"
 			}
 
-			"model_player"		"models/weapons/c_models/c_anesthetizer/c_anesthetizer.mdl"
-			"model_world"		"models/weapons/c_models/c_anesthetizer/c_anesthetizer.mdl"
+			"model_player"		"models/weapons/c_models/c_defense_medigun/c_defense_medigun.mdl"
+			"model_world"		"models/weapons/c_models/c_defense_medigun/c_defense_medigun.mdl"
 			"attach_to_hands"	"1"
-			"extra_wearable" 	"models/player/items/medic_backpack.mdl"
+			"extra_wearable" 	"models/weapons/c_models/c_defense_backpack/c_defense_backpack.mdl"
 			"equip_region"		"medigun_backpack"
 			"static_attrs"
 			{
@@ -2851,7 +2850,13 @@
 				"ubercharge rate bonus"
 				{
 					"attribute_class"	"mult_medigun_uberchargerate"
-					"value" "1.75"
+					"value" "1.8"
+				}
+				"hidden separator" "1"
+				"medigun charge is megaheal"
+				{
+					"attribute_class"	"set_charge_type"
+					"value" "2"
 				}
 				//"charge time increased"
 				//{
@@ -2859,7 +2864,9 @@
 				//	"value" "67"
 				//}
 			}
-			"image_inventory"		"backpack/weapons/c_models/c_anesthetizer/c_medigun_large.vtf"
+			"image_inventory"		"backpack/weapons/c_models/c_defense_medigun/c_defense_medigun"
+			"image_inventory_size_w"		"72"
+			"image_inventory_size_h"		"45"
 			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
@@ -3063,7 +3070,7 @@
 			"item_type_name"	"#TF_Weapon_FlareGun"
 			"item_description"	"Model by: 'NeoDement'"
 			"item_quality"		"normal"
-
+			"propername" 		"1"
 			"item_class"		"tf_weapon_flaregun"
 			"item_slot"			"secondary"
 			"used_by_classes"
@@ -3082,6 +3089,7 @@
 					"attribute_class"	"crit_vs_burning_FLARES_DISPLAY_ONLY"
 					"value"				"1"
 				}
+				"spitfire explain 2" "1"
 				"Projectile speed increased"
 				{
 					"attribute_class"	"mult_projectile_speed"
@@ -3099,6 +3107,11 @@
 					"value"				"0.5"
 				}
 				"hidden separator" "1"
+				"mod projectile heat seek power"
+				{
+					"attribute_class"	"mod_projectile_heat_seek_power"
+					"value"				"0.01"
+				}
 				"weapon burn time reduced"
 				{
 					"attribute_class"	"mult_wpn_burntime"
@@ -3117,6 +3130,8 @@
 			}
 			"visuals"
 			{
+				"sound_single_shot"		"Weapon_Spitfire.Single"
+				"sound_burst" 		  	 "Weapon_Spitfire.SingleCrit"
 				"animation_replacement"
 				{
 					"ACT_SECONDARY_VM_INSPECT_START"	"ACT_ITEM1_VM_INSPECT_START"
@@ -3128,6 +3143,68 @@
 			"image_inventory"		"backpack/weapons/c_models/c_spitfire/c_spitfire_large.vtf"
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
+		}
+		"7303" // db shotgun
+		{
+			"name"				"db shotgun"
+			"item_name"			"Double Barrel Shotgun"
+			"item_type_name"	"#TF_Weapon_Shotgun"
+			"item_description"	"Model by: 'Hau, Kibbleknight'"
+			"item_quality"		"normal"
+
+			"item_class"	"tf_weapon_shotgun"
+			"item_slot"		"secondary"
+			"used_by_classes"
+			{
+				"Pyro"	"1"
+				"Soldier"	"1"
+			}
+
+			"model_player"		"models/weapons/v_models/v_doubleshotgun/v_doubleshotgun.mdl"
+			"model_world"		"models/weapons/c_models/c_doubleshotgun/c_doubleshotgun.mdl"
+			"attach_to_hands"	"2"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -11"
+			}
+			"attributes"
+			{
+				"db shotgun explain" "1"
+				"bullets per shot bonus"
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value" "1.66"
+				}
+				"damage penalty"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"0.5"
+				}
+				"mod burstfire"
+				{
+					"attribute_class"	"mod_burstfire"
+					"value" "2 0.05"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value" "1.25"
+				}
+				"hidden separator" "1"
+				"Reload time decreased"
+				{
+					"attribute_class"	"mult_reload_time"
+					"value" "0.8"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_DB_Shotgun.Single"
+				"sound_burst"			"Weapon_DB_Shotgun.SingleCrit"
+			}
+			"image_inventory"		"backpack/weapons/c_models/c_doubleshotgun/c_doubleshotgun"
+			"mouse_pressed_sound"	"ui/item_medium_gun_pickup.wav"
+			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
 		"7500"
 		{
@@ -3934,6 +4011,11 @@ Animations by: 'Kylul'"
 					"attribute_class"	"add_maxhealth"
 					"value"				"25"
 				}
+				"damage bonus"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"1.5"
+				}
 				"maxammo primary increased"
 				{
 					"attribute_class"		"mult_maxammo_primary"
@@ -3962,6 +4044,78 @@ Animations by: 'Kylul'"
 			}
 			"mouse_pressed_sound"	"ui/item_shovel_pickup.wav"
 			"drop_sound"		"ui/item_shovel_drop.wav"
+		}
+		"7902" // The obrez
+		{
+			"name"				"Obrez"
+			"item_name"			"Obrez"
+			"item_type_name"	"Lightly Modified Rifle"
+			"item_description"	"Model by: 'Haau, VitreousGlassy'
+			Animations by: 'Raptor Dan'"
+			"item_quality"		"normal"
+			//"propername"	"1"
+			"item_class"	"tf_weapon_revolver"
+			"item_slot"		"secondary"
+			"used_by_classes"
+			{
+				"Spy"		"1"
+			}
+
+			"model_world"				"models/weapons/c_models/c_obrez/c_obrez_spy.mdl"
+			"model_player"				"models/weapons/v_models/v_obrez/v_obrez_spy.mdl"
+			"attach_to_hands"		"2"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -6"
+			}
+			"attributes"
+			{
+				"obrez explain" "1"
+				"damage penalty"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"0.3"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"		"mult_postfiredelay"
+					"value"				"3"
+				}
+				"clip size penalty"
+				{
+					"attribute_class"		"mult_clipsize"
+					"value"				"0.83333"
+				}
+				"hidden separator" "1"
+				"bullets per shot bonus"
+				{
+					"attribute_class"		"mult_postfiredelay"
+					"value"				"4"
+				}
+				"spread penalty"
+				{
+					"attribute_class"		"spread_penalty"
+					"value"				"4"
+				}
+				"shorter damage falloff distance"
+				{
+					"attribute_class"	"mult_damage"
+					"value"				"0.75"
+				}
+				"maxammo secondary increased"
+				{
+					"attribute_class"		"mult_maxammo_primary"
+					"value"				"0.8333333"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_Obrez.Single"
+				"sound_burst"			"Weapon_Obrez.SingleCrit"
+			}
+			"image_inventory"			"backpack/weapons/c_models/c_obrez_spy/c_obrez_spy"
+			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
+			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
 		"7400"
 		{
@@ -4246,7 +4400,7 @@ Animations by: 'Kylul'"
 				"weapon spread bonus"
 				{
 					"attribute_class"		"mult_spread_scale"
-					"value"				"0.85"
+					"value"				"0.9"
 				}
 				"fire rate bonus"
 				{
@@ -4266,12 +4420,12 @@ Animations by: 'Kylul'"
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.2375"
+					"value"				"0.23"
 				}
 				"longer damage falloff distance"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"1.4"
+					"value"				"1.36"
 				}
 				"headshot is minicrit"
 				{
@@ -4389,6 +4543,7 @@ Animations by: 'Kylul'"
 			"image_inventory"			"backpack/weapons/w_models/w_pdq"
 			"model_world"				"models/weapons/w_models/w_pdq/w_pdq.mdl"
 			"model_player"				"models/weapons/v_models/v_pdq/v_pdq_engineer.mdl"
+			"extra_wearable" 			"models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot.mdl"
 			"attach_to_hands" "2"
 			"used_by_classes"
 			{
@@ -4599,7 +4754,7 @@ Animations by: 'Kylul'"
 			"static_attrs"
 			{
 				"min_viewmodel_offset"	"10 0 -10"
-				"damage bonus" "1.35"
+				"damage bonus" "1.25"
 			}
 			"attributes"
 			{
@@ -15127,7 +15282,8 @@ Animations by: 'Kylul'"
 		{
 			"name"					"air superiority explain"
 			"attribute_class"		"explain"
-			"description_string"	"Airblasting teammates gives a speedboost to you and affected teammates"
+			"description_string"	"Airblasting teammates gives a speedboost to you and affected teammates
+			Reflecting enemy projectiles gives you a speedboost"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"positive"
@@ -15204,6 +15360,46 @@ Animations by: 'Kylul'"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4023"
+		{
+			"name"					"spitfire explain 2"
+			"attribute_class"		"explain"
+			"description_string"	"Flares are not affected by gravity"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4024"
+		{
+			"name"					"mod projectile heat seek power"
+			"attribute_class"		"mod_projectile_heat_seek_power"
+			"description_string"	"Flares home in on burning enemies"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4025"
+		{
+			"name"					"obrez explain"
+			"attribute_class"		"explain"
+			"description_string"	"Fires 4 pellets with randomized spread"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4026"
+		{
+			"name"					"db shotgun explain"
+			"attribute_class"		"explain"
+			"description_string"	"Fires a burst of 2 shots with a wide horizontal spread"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
 			"stored_as_integer"		"1"
 		}
 	}

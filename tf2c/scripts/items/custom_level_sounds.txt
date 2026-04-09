@@ -5584,6 +5584,121 @@
 }
 
 // ------------------------------------------------------------------------------------ //
+// OBREZ
+// ------------------------------------------------------------------------------------ //
+"Weapon_Obrez.Single"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+    "pitch"		"98, 102"
+    "wave"		")weapons\Obrez_Fire.wav"
+}
+
+"Weapon_Obrez.SingleCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+    "pitch"		"98, 102"
+	"wave"		")weapons\Obrez_FireCrit.wav"
+}
+
+"Weapon_Obrez.BoltOpen"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".7"
+	"wave"		"weapons/Obrez_BoltBack.wav"
+}
+
+"Weapon_Obrez.BoltOpen2"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".7"
+	"wave"		"weapons/Obrez_BoltBack_Reload.wav"
+}
+
+"Weapon_Obrez.StripperPing"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"1.0"
+	"wave"		"weapons/Obrez_StripperClip_Remove.wav"
+}
+
+"Weapon_Obrez.ClipInsert"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.7"
+	"wave"		"weapons/RuntRifle_ClipAlign.wav"
+}
+
+"Weapon_Obrez.ClipBullets1"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.7"
+	"wave"		")weapons/RuntRifle_BulletLoad.wav"
+}
+
+"Weapon_Obrez.ClipBullets2"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.7"
+	"wave"		")weapons/RuntRifle_BulletLoad2.wav"
+}
+
+"Weapon_Obrez.BoltClose"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".7"
+	"wave"		"weapons/Obrez_BoltFoward.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// Spitfire
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_DB_Shotgun.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/DoubleShotgun_Fire.wav"
+}
+"Weapon_DB_Shotgun.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/DoubleShotgun_FireCrit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// DB Shotgun
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_Spitfire.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/spitfire_shoot.wav"
+}
+"Weapon_Spitfire.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/spitfire_shoot_crit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
 // PISTOL KNIFE
 // ------------------------------------------------------------------------------------ //
 
