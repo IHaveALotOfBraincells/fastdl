@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "backpack/weapons/c_models/c_precisionstrike/c_precisionstrike_large"
+	"$translucent" 1
+	$vertexcolor 1
+}

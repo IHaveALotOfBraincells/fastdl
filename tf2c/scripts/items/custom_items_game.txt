@@ -420,7 +420,7 @@
 			"static_attrs"
 			{
 				"min_viewmodel_offset"	"10 0 -9"
-				"no primary ammo from dispensers while active" "1"
+				//"no primary ammo from dispensers while active" "1"
 			}
 			"visuals_mvm_boss"
 			{
@@ -578,6 +578,7 @@
 				"stickybomb explain"			"1"
 				"min_viewmodel_offset"			"10 0 -10"
 				"class select override vcd" 	"class_select_gunboats_sticky"
+				"Blast radius decreased" "0.9"
 			}
 
 			"image_inventory"		"backpack/weapons/w_models/w_stickybomb_launcher"
@@ -1563,6 +1564,7 @@
 					"attribute_class"	"mult_dmg"
 					"value"				"1.3"
 				}
+				"rpg explain" "1"
 				"Projectile speed decreased"
 				{
 					"attribute_class"	"mult_projectile_speed"
@@ -1577,7 +1579,7 @@
 				"self dmg push force increased"				
 				{
 					"attribute_class"	"mult_dmgself_push_force"
-					"value" 			"1.15"
+					"value" 			"1.38"
 				}
 				"blast dmg to self increased"
 				{
@@ -2339,17 +2341,23 @@
 				{
 					"attribute_class"	"bullet_is_a_hull"
 					"value"				"18"
-				}	
+				}
 				"custom falloff"
 				{
 					"attribute_class"	"mod_custom_falloff"
-					"value"				"0.75"
+					"value"				"0.85"
 				}
 				"mod mini-crit airborne"
 				{
 					"attribute_class"	"mini_crit_airborne"
 					"value"				"1"
 				}
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.1"
+				}
+				"aagun explain" "1"
 				"limited range"
 				{
 					"attribute_class"	"VISUALONLY"
@@ -2359,7 +2367,7 @@
 				"blast dmg to self increased"
 				{
 					"attribute_class"	"blast_dmg_to_self"
-					"value"				"2.0"
+					"value"				"1.5"
 				}
 				"self dmg push force increased"				
 				{
@@ -2946,7 +2954,7 @@
 				"ubercharge rate penalty"
 				{
 					"attribute_class"	"mult_medigun_uberchargerate"
-					"value"				"0.75"
+					"value"				"0.65"
 				}
 				//"health drain medic"
 				//{
@@ -3460,9 +3468,11 @@ Animations by: 'Kylul'"
 			"item_class"	"saxxy"
 			"item_logname"	"pipe"
 			"item_iconname"	"pipe"
+			"item_description"	"Model by: 'void~, Z'"
 			"show_in_armory"	"1"
 			"item_type_name"	"Lead Pipe"
-			"item_name"	"Lead Pipe"
+			"item_name"	"Pipe Dream"
+			"propername" "1"
 			"item_slot"	"melee"
 			"image_inventory"	"backpack/weapons/w_models/w_leadpipe/w_leadpipe_large.vtf"
 			"image_inventory_size_w"		"128"
@@ -3493,12 +3503,12 @@ Animations by: 'Kylul'"
 				"add condition on hit weapon"
 				{
 					"attribute_class"		"add_onhit_addcond_weapon"
-					"value"	"136 0.5"
+					"value"	"136 0.825"
 				}
 				"fire rate penalty"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"	"1.5"
+					"value"	"1.4"
 				}
 			}
 			"visuals"
@@ -3741,7 +3751,7 @@ Animations by: 'Kylul'"
 			"name"				"mortal mortar"
 			"item_name"			"Mortal Mortar"
 			"item_type_name"	"#TF_Weapon_RocketLauncher"
-			"item_description"	"Models by: 'Nano393', 'Elbagast' and 'N-Cognito'"
+			"item_description"	"Model by: 'Nano393', 'N-Cognito'"
 			"item_quality"		"normal"
 			"image_inventory"			"backpack\workshop\weapons\c_models\c_mortar\c_mortar"
 			"item_class"	"tf_weapon_rocketlauncher"
@@ -3750,9 +3760,99 @@ Animations by: 'Kylul'"
 			{
 				"Soldier"		"1"
 			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 -3 -10"
+			}
 			"attributes"
 			{
-				"mortal mortar explain"
+				//"mortal mortar explain"
+				//{
+				//	"attribute_class"		"VISUALONLY"
+				//	"value"				"1"
+				//}
+				"auto fires full clip"
+				{
+					"attribute_class"		"auto_fires_full_clip"
+					"value"				"1"
+				}
+				"mod max primary clip override"
+				{
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"	"3"
+				}
+				"Blast radius decreased"
+				{
+					"attribute_class"	"mult_explosion_radius"
+					"value"	"0.75"
+				}
+				"damage penalty"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"0.8"
+				}
+				"rocket gravity"
+				{
+					"attribute_class"	"mod_rocket_gravity"
+					"value"				"1.1"
+				}
+				//"mortal mortar arc explain"
+				//{
+				//	"attribute_class"		"VISUALONLY"
+				//	"value"				"1"
+				//}
+				"hidden separator"		"1"
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.15"
+				}
+				//"custom projectile model"
+				//{
+				//	"attribute_class"	"custom_projectile_model"
+				//	"value"				"models/weapons/w_models/w_rocketbeta.mdl"
+				//}
+				//"custom rampup"
+				//{
+				//	"attribute_class"	"mod_custom_rampup"
+				//	"value"				"0.8"
+				//}
+				"projectile spread angle penalty"
+				{
+					"attribute_class"	"projectile_spread_angle"
+					"value"				"5"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_Mortar.Shoot"
+				"sound_burst"			"Weapon_Mortar.ShootCrit"
+			}
+			"model_world"				"models/weapons/c_models/c_mortar/c_mortar.mdl"
+			"model_player"				"models/weapons/v_models/v_mortar/v_mortar_soldier.mdl"
+			"attach_to_hands"			"2"
+		}
+		"7205" // precision strike
+		{
+			"name"					"precision strike"
+			"item_name"				"precision strike"
+			"item_type_name"		"#TF_Weapon_RocketLauncher"
+			"item_description"		"Models by: 'Haau'"
+			"item_quality"			"normal"
+			"image_inventory"			"backpack/weapons/c_models/c_precisionstrike/c_precisionstrike_large.vtf"
+			"item_class"			"tf_weapon_rocketlauncher"
+			"item_slot"				"primary"
+			"used_by_classes"
+			{
+				"Soldier"		"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 -3 -10"
+			}
+			"attributes"
+			{
+				"precision strike explain"
 				{
 					"attribute_class"		"VISUALONLY"
 					"value"				"1"
@@ -3761,11 +3861,6 @@ Animations by: 'Kylul'"
 				{
 					"attribute_class"	"mini_crit_airborne"
 					"value" "1"
-				}
-				"damage bonus"
-				{
-					"attribute_class"		"mult_dmg"
-					"value"				"1.1075"
 				}
 				"Projectile speed increased"
 				{
@@ -3777,30 +3872,25 @@ Animations by: 'Kylul'"
 					"attribute_class"	"mult_explosion_radius"
 					"value"	"0.3"
 				}
-				"mortal mortar arc explain"
-				{
-					"attribute_class"		"VISUALONLY"
-					"value"				"1"
-				}
 				"hidden separator"		"1"
-								"no damage falloff over distance"
+				"damage bonus"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"1.1075"
+				}
+				"no damage falloff over distance"
 				{
 					"attribute_class"	"mod_no_dmg_falloff"
 					"value"				"1"
-				}
-				"rocket gravity"
-				{
-					"attribute_class"	"mod_rocket_gravity"
-					"value"				"0.8"
 				}
 				"custom projectile model"
 				{
 					"attribute_class"	"custom_projectile_model"
 					"value"				"models/weapons/w_models/w_rocketbeta.mdl"
 				}
-				"rocket whistle"
+				"custom rampup"
 				{
-					"attribute_class"	"rocket_whistle"
+					"attribute_class"	"mod_custom_rampup"
 					"value"				"1"
 				}
 			}
@@ -3810,9 +3900,89 @@ Animations by: 'Kylul'"
 				"sound_burst"			"Weapon_Burster.ShootCrit"
 				//"sound_special1"		"Weapon_Burster.Explode"
 			}
-			"model_world"				"models/weapons/c_models/c_mortar/c_mortar.mdl"
-			"model_player"				"models/weapons/v_models/v_mortar/v_mortar_soldier.mdl"
-			"attach_to_hands"			"2"
+			"model_world"				"models/weapons/c_models/c_precisionstrike/c_precisionstrike.mdl"
+			"model_player"				"models/weapons/c_models/c_precisionstrike/c_precisionstrike.mdl"
+			"attach_to_hands"			"1"
+		}
+		"7206" // Unfortunate Son
+		{
+			"name"				"Unfortunate Son"
+			"item_name"			"Unfortunate Son"
+			"item_type_name"	"Assault Rifle"
+			"item_description"	"Model by: 'Hau, Kibbleknight'
+Animations by: 'Raptor Dan'"
+			"item_quality"		"normal"
+
+			"item_class"	"tf_weapon_smg"
+			"item_slot"		"secondary"
+			"used_by_classes"
+			{
+				"Soldier"	"1"
+			}
+
+			"model_player"		"models/weapons/v_models/v_unfortunate_son/v_unfortunate_son_soldier.mdl"
+			"model_world"		"models/weapons/w_models/w_unfortunate_son/w_unfortunate_son_soldier.mdl"
+			"attach_to_hands"	"2"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -7"
+			}
+			"attributes"
+			{
+				"ufson explain" "1"
+				"hidden separator" "1"
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value" "1.75"
+				}
+				"mod max primary clip override"
+				{
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"	"24"
+				}
+				"mod burstfire"
+				{
+					"attribute_class"	"mod_burstfire"
+					"value" "3 0.325"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value" "2.75"
+				}
+				"weapon spread bonus"
+				{
+					"attribute_class"	"mult_spread_scale"
+					"value"				"1.35"
+				}
+				"maxammo secondary increased"
+				{
+					"attribute_class"	"mult_maxammo_secondary"
+					"value" "1.6"
+				}
+			}
+			"image_inventory"		"backpack/weapons/c_models/c_unfortunate_son/c_unfortunate_son_large.vtf"
+			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
+			"drop_sound"			"ui/item_light_gun_drop.wav"
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_UFSon.Single"
+				"sound_burst"			"Weapon_UFSon.SingleCrit"
+
+				"animation_replacement"
+				{
+					"ACT_MP_DEPLOYED_IDLE"						"ACT_MP_STAND_PRIMARY"
+					"ACT_MP_DEPLOYED_PRIMARY"					"ACT_MP_RUN_PRIMARY"
+					"ACT_MP_DEPLOYED"							"ACT_MP_RUN_PRIMARY"
+					"ACT_MP_CROUCH_DEPLOYED_IDLE"				"ACT_MP_CROUCH_PRIMARY"
+					"ACT_MP_CROUCHWALK_DEPLOYED"				"ACT_MP_CROUCHWALK_PRIMARY"
+
+					"ACT_MP_ATTACK_STAND_PRIMARYFIRE_DEPLOYED"  	"ACT_MP_ATTACK_STAND_PRIMARY"
+                    "ACT_MP_ATTACK_CROUCH_PRIMARYFIRE_DEPLOYED"  "ACT_MP_ATTACK_CROUCH_PRIMARYFIRE"
+					"ACT_MP_SWIM_DEPLOYED_PRIMARY"					"ACT_MP_SWIM_PRIMARY"
+				}
+			}
 		}
 		"7100" // force a nature
 		{
@@ -4023,7 +4193,7 @@ Animations by: 'Kylul'"
 				"damage bonus"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"7"
+					"value"				"8.1"
 				}
 				"shorter damage falloff distance"
 				{
@@ -4157,7 +4327,7 @@ Animations by: 'Kylul'"
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.75"
+					"value"				"0.7"
 				}
 				"hidden separator" "1"
 				"silent killer"
@@ -4212,11 +4382,11 @@ Animations by: 'Kylul'"
 					"attribute_class"	"add_maxhealth"
 					"value"				"25"
 				}
-				//"damage bonus"
-				//{
-				//	"attribute_class"		"mult_dmg"
-				//	"value"				"1.5"
-				//}
+				"damage bonus"
+				{
+					"attribute_class"		"mult_dmg"
+					"value"				"1.5"
+				}
 				"maxammo primary increased"
 				{
 					"attribute_class"		"mult_maxammo_primary"
@@ -4227,6 +4397,7 @@ Animations by: 'Kylul'"
 					"attribute_class"		"set_cannot_disguise"
 					"value"				"1"
 				}
+				"gun spy explain" "1"
 				"hidden separator"		"1"
 				"maxammo secondary increased"
 				{
@@ -4594,14 +4765,16 @@ Animations by: 'Kylul'"
 				"class select override vcd" 	"class_select_gunboats_sticky"
 				"tommy sticky explain" "1"
 				"Reload time decreased" "0.65"
-				"Blast radius decreased" "0.75"
-				"damage penalty" "0.75"
+				"Blast radius decreased" "0.9"
+				"damage penalty" "0.8"
 				"max pipebombs decreased" "-3"
+				"tommy sticky explain 2" "1"
 				"hidden separator" "1"
 				"fire rate bonus" "0.1"
 				"auto fires full clip" "1"
 				"clip size penalty" "0.625"
 				"stickybomb fizzle time" "2"
+				"projectile spread angle penalty" "5"
 			}
 			"attributes"
 			{
@@ -4666,7 +4839,7 @@ Animations by: 'Kylul'"
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.195"
+					"value"				"0.185"
 				}
 				"clip size bonus"
 				{
@@ -4814,7 +4987,7 @@ Animations by: 'Kylul'"
 				"fire rate penalty"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.5"
+					"value"				"1.4"
 				}
 				"crit mod disabled"
 				{
@@ -4862,15 +5035,10 @@ Animations by: 'Kylul'"
 					"attribute_class"	"mult_dmg"
 					"value"				"0.41"
 				}
-				"Blast radius decreased"
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"	"0.85"
-				}
-				//"mirv impact"
+				//"Blast radius decreased"
 				//{
-				//	"attribute_class"  "mirv_impact"
-				//	"value"            "1"
+				//	"attribute_class"	"mult_explosion_radius"
+				//	"value"	"0.85"
 				//}
 				"self dmg push force increased"
 				{
@@ -15520,6 +15688,14 @@ Animations by: 'Kylul'"
 			"effect_type"			"positive"
 			"stored_as_integer"		"0"
 		}
+		"5245"
+		{
+			"name"					"set rocket detonate mode"
+			"attribute_class"		"set_rocket_detonate_mode"
+			"description_format"	"value_is_additive"
+			"effect_type"			"positive"
+			"stored_as_integer"		"0"
+		}
 		"5250"
 		{
 			"name"					"mod ubercharge cond"
@@ -15713,7 +15889,7 @@ Animations by: 'Kylul'"
 		{
 			"name"					"slugger explain 2"
 			"attribute_class"		"explain"
-			"description_string"	"-22% damage"
+			"description_string"	"-10% damage"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"negative"
@@ -15845,10 +16021,70 @@ Animations by: 'Kylul'"
 		{
 			"name"					"lead pipe explain"
 			"attribute_class"		"explain"
-			"description_string"	"On Hit: briefly color blind the victim and slow their weapon and movement speed"
+			"description_string"	"On Hit: Briefly color blind the victim and slow their weapon and movement speed"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4033"
+		{
+			"name"					"tommy sticky explain 2"
+			"attribute_class"		"explain"
+			"description_string"	"Bombs shatter 2 seconds after landing"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4034"
+		{
+			"name"					"aagun explain"
+			"attribute_class"		"explain"
+			"description_string"	"-25% self-inflicted explosive damage"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4035"
+		{
+			"name"					"rpg explain"
+			"attribute_class"		"explain"
+			"description_string"	"+20% push force to self"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"1"
+		}
+		"4036"
+		{
+			"name"					"gun spy explain"
+			"attribute_class"		"explain"
+			"description_string"	"No crits to tranquilized enemies"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4037"
+		{
+			"name"					"precision strike explain"
+			"attribute_class"		"explain"
+			"description_string"	"Weapon deals 100 damage regardless of distance"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"1"
+		}
+		"4038"
+		{
+			"name"					"ufson explain"
+			"attribute_class"		"explain"
+			"description_string"	"Fires in 3 round bursts"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
 			"stored_as_integer"		"1"
 		}
 	}

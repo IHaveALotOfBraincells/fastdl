@@ -5249,7 +5249,7 @@
 }
 
 // ------------------------------------------------------------------------------------ //
-// Mortal Mortar
+// Precision Strike
 // ------------------------------------------------------------------------------------ //
 
 "Weapon_Burster.Shoot"
@@ -5276,6 +5276,26 @@
 	"wave"		"weapons/burster_explode1.wav"
 	"wave"		"weapons/burster_explode2.wav"
 	"wave"		"weapons/burster_explode3.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// Mortal Mortar
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_Mortar.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/TrenchBuster_Fire.wav"
+}
+
+"Weapon_Mortar.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/TrenchBuster_FireCrit.wav"
 }
 
 // ------------------------------------------------------------------------------------ //
@@ -5712,6 +5732,64 @@
 	"soundlevel"	"SNDLVL_94dB"
 	"volume"		"1.0"
 	"wave"			")weapons/DoubleShotgun_FireCrit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// Unfortunate Son
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_UFSon.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+    "pitch"		"98, 102"
+	"wave"		")weapons\assaultrifle_shoot.wav"
+
+}
+"Weapon_UFSon.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+    "pitch"		"98, 102"
+	"wave"			")weapons/assaultrifle_shoot_crit.wav"
+}
+
+"Weapon_UFSon.Cock_Back"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".67"
+	"pitch"		"98, 102"
+	"wave"		"weapons/CivShotgun_PumpBack.wav"
+}
+
+"Weapon_UFSon.Cock_Forward"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".67"
+	"pitch"		"98, 102"
+	"wave"		"weapons/CivShotgun_PumpForward.wav"
+}
+
+"Weapon_UFSon.ClipOut"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.35"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"		"weapons/assaultrifle_clip_out.wav"
+}
+
+"Weapon_UFSon.ClipIn"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.35"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"		"weapons/assaultrifle_clip_in.wav"
 }
 
 // ------------------------------------------------------------------------------------ //
