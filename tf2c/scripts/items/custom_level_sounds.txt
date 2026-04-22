@@ -5831,6 +5831,25 @@
 }
 
 // ------------------------------------------------------------------------------------ //
+// Boston Blaster
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_Boston_Blaster.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/db_shoot.wav"
+}
+"Weapon_Boston_Blaster.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/db_shoot_crit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
 // Lil Mac
 // ------------------------------------------------------------------------------------ //
 

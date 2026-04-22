@@ -162,6 +162,7 @@
 			{
 				"knife explain"			"1"
 				"min_viewmodel_offset"	"5 0 -4"
+				"tranq melee boost" "1"
 			}
 
 			"image_inventory"		"backpack/weapons/w_models/w_knife"
@@ -387,7 +388,10 @@
 				"sniper charge per sec" "1.5"
 				//"sniper full charge damage bonus" "1.6666"
 				//"maxammo primary reduced" "0.8"
-				"damage penalty" "0.7"
+				//"damage penalty" "0.7"
+				"sniper rifle explain" "1"
+				"hidden separator" "1"
+				"headshot damage increase" "0.666"
 			}
 			"visuals"
 			{
@@ -1657,7 +1661,7 @@
 				"longer damage falloff distance"
 				{
 					"attribute_class"	"mult_falloff_distance"
-					"value"				"1.25"
+					"value"				"1.4"
 				}
 			}
 
@@ -1785,6 +1789,16 @@
 				{
 					"attribute_class"	"mod_tranq_onhit"
 					"value"				"5.0"
+				}
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"3"
+				}
+				"add cloak on hit"
+				{
+					"attribute_class"	"add_cloak_on_hit"
+					"value"				"20"
 				}
 				"reload while not active explain"	"1"
 			}
@@ -2162,10 +2176,15 @@
 					"attribute_class"	"gain_stored_crits_on_hit"
 					"value"				"1"
 				}
-				"melee taken becomes crit on wearer"
+				//"melee taken becomes crit on wearer"
+				//{
+				//	"attribute_class"	"melee_taken_becomes_crit_wearer"
+				//	"value"				"1"
+				//}
+				"dmg from melee increased"
 				{
-					"attribute_class"	"melee_taken_becomes_crit_wearer"
-					"value"				"1"
+					"attribute_class"	"dmg_from_melee"
+					"value"				"2"
 				}
 				"always crits on full stored crits"
 				{
@@ -3115,11 +3134,11 @@
 				}
 				"reload while not active explain"	"1"
 				"hidden separator" "1"
-				//"add condition on kill"
-				//{
-				//	"attribute_class"	"add_onkill_addcond_self"
-				//	"value"	"137 2"
-				//}
+				"add condition on kill"
+				{
+					"attribute_class"	"add_onkill_addcond_self"
+					"value"	"32 2"
+				}
 				"mod projectile heat seek power"
 				{
 					"attribute_class"	"mod_projectile_heat_seek_power"
@@ -3781,37 +3800,32 @@ Animations by: 'Kylul'"
 					"attribute_class"	"mod_max_primary_clip_override"
 					"value"	"3"
 				}
-				"Blast radius decreased"
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"	"0.75"
-				}
 				"damage penalty"
 				{
 					"attribute_class"		"mult_dmg"
-					"value"				"0.8"
+					"value"				"0.85"
+				}
+				"Blast radius decreased"
+				{
+					"attribute_class"	"mult_explosion_radius"
+					"value"	"0.85"
 				}
 				"rocket gravity"
 				{
 					"attribute_class"	"mod_rocket_gravity"
-					"value"				"1.1"
+					"value"				"1"
 				}
-				//"mortal mortar arc explain"
-				//{
-				//	"attribute_class"		"VISUALONLY"
-				//	"value"				"1"
-				//}
+				"auto fires when full"
+				{
+					"attribute_class"	"auto_fires_when_full"
+					"value"				"1"
+				}
 				"hidden separator"		"1"
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
 					"value"				"0.15"
 				}
-				//"custom projectile model"
-				//{
-				//	"attribute_class"	"custom_projectile_model"
-				//	"value"				"models/weapons/w_models/w_rocketbeta.mdl"
-				//}
 				//"custom rampup"
 				//{
 				//	"attribute_class"	"mod_custom_rampup"
@@ -3820,7 +3834,7 @@ Animations by: 'Kylul'"
 				"projectile spread angle penalty"
 				{
 					"attribute_class"	"projectile_spread_angle"
-					"value"				"5"
+					"value"				"4.5"
 				}
 			}
 			"visuals"
@@ -3840,6 +3854,8 @@ Animations by: 'Kylul'"
 			"item_description"		"Models by: 'Haau'"
 			"item_quality"			"normal"
 			"image_inventory"			"backpack/weapons/c_models/c_precisionstrike/c_precisionstrike_large.vtf"
+			"image_inventory_size_w"	"252"
+			"image_inventory_size_h"	"168"
 			"item_class"			"tf_weapon_rocketlauncher"
 			"item_slot"				"primary"
 			"used_by_classes"
@@ -3954,7 +3970,7 @@ Animations by: 'Raptor Dan'"
 				"weapon spread bonus"
 				{
 					"attribute_class"	"mult_spread_scale"
-					"value"				"1.35"
+					"value"				"1.15"
 				}
 				"maxammo secondary increased"
 				{
@@ -3984,26 +4000,27 @@ Animations by: 'Raptor Dan'"
 				}
 			}
 		}
-		"7100" // force a nature
+		"7100" // Boston Blaster
 		{
-			"name"				"The Force-a-Nature"
+			"name"				"Boston Blaster"
 			"item_class"		"tf_weapon_scattergun"
-			"base_item_name"	"The Force-a-Nature"
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_Scattergun"
-			"item_name"			"Force-a-nature"
-			"item_description"	""
-			"item_logname"		"force_a_nature"
-			"item_iconname"		"force_a_nature"
+			"item_name"			"Boston Blaster"
+			"item_description"	"Model by: 'HocterDaggiz, DanielAwesomo'
+Animations by: 'GarlikBread'"
+			"item_logname"		"Boston Blaster"
+			"item_iconname"		"Boston Blaster"
 			"item_slot"			"primary"
 			"anim_slot"			"item2"
 			"propername"		"1"
 			"min_ilevel"		"10"
 			"max_ilevel"		"10"
-			"image_inventory"	"backpack/weapons/c_models/c_double_barrel/c_double_barrel_tf2c"
+			"image_inventory"	"backpack/weapons/c_models/c_hooligan_harmer/c_hooligan_harmer_large.vtf"
 			"image_inventory_size_w"		"128"
 			"image_inventory_size_h"		"82"
-			"model_player"		"models/weapons/c_models/c_double_barrel.mdl"
+			"model_player"		"models/weapons/v_models/v_hooligan_harmer/v_hooligan_harmer_scout.mdl"
+			"model_world"		"models/weapons/c_models/c_hooligan_harmer/c_hooligan_harmer_scout.mdl"
 			"attach_to_hands" "1"
 			"used_by_classes"
 			{
@@ -4030,6 +4047,11 @@ Animations by: 'Raptor Dan'"
 					"attribute_class"	"mult_bullets_per_shot"
 					"value" "1.6666"
 				}
+				"mod horizontal spread"
+				{
+					"attribute_class"	"mod_horizontal_spread"
+					"value"				"1"
+				}
 				"damage penalty"
 				{
 					"attribute_class"	"mult_dmg"
@@ -4053,10 +4075,10 @@ Animations by: 'Raptor Dan'"
 			}
 			"visuals"
 			{
-				"sound_single_shot"	"Weapon_Scatter_Gun_Double.Single"
-				"sound_burst"	"Weapon_Scatter_Gun_Double.SingleCrit"
-				"muzzle_flash"	"muzzle_bignasty"
-				"tracer_effect"	"bullet_bignasty_tracer01"
+				"sound_single_shot"	"Weapon_Boston_Blaster.Single"
+				"sound_burst"		"Weapon_Boston_Blaster.SingleCrit"
+				"muzzle_flash"		"muzzle_bignasty"
+				"tracer_effect"		"bullet_bignasty_tracer01"
 
 				"animation_replacement"
 				{
@@ -4079,74 +4101,91 @@ Animations by: 'Raptor Dan'"
 			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
 			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 		}
-		"7101" // shortstop
+		"7101" // coffee
 		{
-			"name"						"shortstop"
-			"item_class"				"tf_weapon_scattergun"
-			"show_in_armory"			"1"
-			"item_slot"					"primary"
-			"anim_slot"					"secondary"
-			"propername"				"1"
-			"item_name"					"Shortstop"
-			"item_type_name"			"Derringer"
-			"item_description"			"The latest in high-attitude personal defense!"
-			"item_logname"				"shortstop"
-			"item_iconname"				"shortstop"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_shortstop/c_shortstop_custom"
-			"model_world"				"models/workshop/weapons/c_models/c_shortstop/c_shortstop.mdl"
-			"model_player"				"models/weapons/v_models/v_shortstop/v_shortstop_scout_db.mdl"
-			"attach_to_hands"			"2"
+			"name"				"Coffee"
+			"item_name"			"Matcha Coffee"
+			"item_type_name"	"Throwable Coffee"
+			"item_description"	"Model by: 'ZombiePlasticClock' 'NassimO'"
+			"item_quality"		"normal"
+			"image_inventory_size_w"	"171"
+			"image_inventory_size_h"	"114"
+			"item_class"	"tf_weapon_grenade_mirv"
+			"item_slot"		"secondary"
+			"anim_slot"		"item1"
 			"used_by_classes"
 			{
-				"scout"					"1"
+				"scout"	"1"
 			}
-			"static_attrs"
+			"attributes"
 			{
-				"min_viewmodel_offset"	"10 0 -11"
-				"class select override vcd"				"class_select_nailgun"					// The Nailgun select looks a lot more neutral than his Scattergun one - it's good for this wep.
-				"clip size penalty hidden"				"0.7"									// 4 shots!
-				"fire rate penalty hidden"				"0.576"									// Boost fire rate to match Shortstop's
-				"damage bonus hidden"					"1.73"
-			}
-			"attributes"																		// Generally speaking, I tend to put the "visible" attributes down here, but Static Attrs works just fine too!
-			{
-				"shortstop explain"
+				"coffee explain" "1"
+				"override projectile type"
 				{
-					"attribute_class"	"VISUALONLY"
-					"value"	"1"
+					"attribute_class"	"override_projectile_type"
+					"value"				"3"
 				}
-				"hidden separator"		"1"
-				"reload time increased hidden"
+				"hidden separator" "1"
+				"weapon burn time reduced"
 				{
-					"attribute_class"	"mult_reload_time_hidden"
-					"value"	"2.7"
+					"attribute_class"	"mult_wpn_burntime"
+					"value"				"-8"
 				}
-				"bullets per shot bonus"
+				"Set DamageType Ignite"
 				{
-					"attribute_class"	"mult_bullets_per_shot"
-					"value"				"0.4"
-				}
-				"weapon spread bonus"
-				{
-					"attribute_class"	"mult_spread_scale"
-					"value"				"0.875"
-				}
-				"scattergun no reload single"
-				{
-					"attribute_class"	"set_scattergun_no_reload_single"
+					"attribute_class"	"set_dmgtype_ignite"
 					"value"				"1"
 				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.335"
+				}
+				"Blast radius increased"
+				{
+					"attribute_class"	"mult_explosion_radius"
+					"value"	"0.1"
+				}
+				//"add condition on hit weapon"
+				//{
+				//	"attribute_class"		"add_onhit_addcond_weapon"
+				//	"value"	"136 0.825"
+				//}
+				"self dmg push force increased"
+				{
+					"attribute_class"	"mult_dmgself_push_force"
+					"value" 			"0.2"
+				}
+				"custom projectile model"
+				{
+					"attribute_class"	"custom_projectile_model"
+					"value"				"models/weapons/c_models/c_coffee/c_caffeine.mdl"
+				}
+				"no self blast dmg"
+				{
+					"attribute_class"	"no_self_blast_dmg"
+					"value" "2"
+				}
+			}
+
+			"model_world"		"models/weapons/c_models/c_coffee/c_caffeine.mdl"
+			"model_player"		"models/weapons/c_models/c_coffee/c_caffeine.mdl"
+			"attach_to_hands"	"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -10"
 			}
 			"visuals"
 			{
-				"sound_single_shot"	"Weapon_Short_Stop.Single"
-				"sound_burst"	"Weapon_Short_Stop.SingleCrit"
-				"sound_reload"		"Weapon_Short_Stop.Reload"
-				"muzzle_flash"	"muzzle_bignasty"
-				"tracer_effect"	"bullet_bignasty_tracer01"
+				"sound_special1"		"Scout.DodgeCanOpen"
+
 			}
-			"mouse_pressed_sound"		"#items/pickup_small.wav"
-			"drop_sound"				"#ui/item_light_gun_drop.wav"
+			"item_logname"	"mirv"
+			"item_iconname"	"mirv_projectile"
+
+			"image_inventory"		"backpack/weapons/w_models/w_caffeine/w_caffeine_large.vtf"
+			"mouse_pressed_sound"	"ui/item_bag_fast_pickup.wav"
+			"drop_sound"			"ui/item_bag_drop.wav"
 		}
 		"7102" // slugger
 		{
@@ -4155,7 +4194,8 @@ Animations by: 'Raptor Dan'"
 			"item_type_name"	"#TF_Weapon_Scattergun"
 			"item_description"	"Model by: 'Haau'"
 			"item_quality"		"normal"
-
+			"image_inventory_size_w"	"252"
+			"image_inventory_size_h"	"168"
 			"item_class"	"tf_weapon_pep_brawler_blaster"
 			"item_slot"		"primary"
 			"used_by_classes"
@@ -4193,7 +4233,7 @@ Animations by: 'Raptor Dan'"
 				"damage bonus"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"8.1"
+					"value"				"7.2"
 				}
 				"shorter damage falloff distance"
 				{
@@ -4257,7 +4297,7 @@ Animations by: 'Raptor Dan'"
 				"damage penalty"
 				{
 					"attribute_class"	"mult_damage"
-					"value"				"0.55"
+					"value"				"0.6"
 				}
 				"lil mac explain" "1"
 				"hidden separator" "1"
@@ -4764,7 +4804,7 @@ Animations by: 'Raptor Dan'"
 				"min_viewmodel_offset"			"10 0 -10"
 				"class select override vcd" 	"class_select_gunboats_sticky"
 				"tommy sticky explain" "1"
-				"Reload time decreased" "0.65"
+				"Reload time decreased" "0.7"
 				"Blast radius decreased" "0.9"
 				"damage penalty" "0.8"
 				"max pipebombs decreased" "-3"
@@ -4987,7 +5027,7 @@ Animations by: 'Raptor Dan'"
 				"fire rate penalty"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.4"
+					"value"				"1.25"
 				}
 				"crit mod disabled"
 				{
@@ -5035,11 +5075,11 @@ Animations by: 'Raptor Dan'"
 					"attribute_class"	"mult_dmg"
 					"value"				"0.41"
 				}
-				//"Blast radius decreased"
-				//{
-				//	"attribute_class"	"mult_explosion_radius"
-				//	"value"	"0.85"
-				//}
+				"Blast radius increased"
+				{
+					"attribute_class"	"mult_explosion_radius"
+					"value"	"1.15"
+				}
 				"self dmg push force increased"
 				{
 					"attribute_class"	"mult_dmgself_push_force"
@@ -5140,7 +5180,7 @@ Animations by: 'Raptor Dan'"
 				"engy sentry damage bonus"
 				{
 					"attribute_class"		"mult_engy_sentry_damage"
-					"value" 	"0.5"
+					"value" 	"0.65"
 				}
 			}
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
@@ -15688,6 +15728,14 @@ Animations by: 'Raptor Dan'"
 			"effect_type"			"positive"
 			"stored_as_integer"		"0"
 		}
+		"5242"
+		{
+			"name"					"tranq melee boost"
+			"attribute_class"		"tranq_melee_boost"
+			"description_format"	"value_is_additive"
+			"effect_type"			"positive"
+			"stored_as_integer"		"0"
+		}
 		"5245"
 		{
 			"name"					"set rocket detonate mode"
@@ -15889,7 +15937,7 @@ Animations by: 'Raptor Dan'"
 		{
 			"name"					"slugger explain 2"
 			"attribute_class"		"explain"
-			"description_string"	"-10% damage"
+			"description_string"	"-20% damage"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"negative"
@@ -16082,6 +16130,26 @@ Animations by: 'Raptor Dan'"
 			"name"					"ufson explain"
 			"attribute_class"		"explain"
 			"description_string"	"Fires in 3 round bursts"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"1"
+		}
+		"4039"
+		{
+			"name"					"sniper rifle explain"
+			"attribute_class"		"explain"
+			"description_string"	"-33% headshot damage"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"negative"
+			"stored_as_integer"		"1"
+		}
+		"4040"
+		{
+			"name"					"coffee explain"
+			"attribute_class"		"explain"
+			"description_string"	"Throw at enemies to set them on fire"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"neutral"
