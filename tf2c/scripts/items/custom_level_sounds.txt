@@ -6037,3 +6037,41 @@
 	"volume"		"1.0"
 	"wave"			")weapons/revolver_engineer_alt_shoot_crit.wav"
 }
+
+// ------------------------------------------------------------------------------------ //
+// population controller
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_Population.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/DBSG_Fire.wav"
+}
+"Weapon_Population.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/DBSG_FireCrit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// the get-of-my-lawnathon 9000
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_EngiShot.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/CivShotgun_Fire.wav"
+}
+"Weapon_EngiShot.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/CivShotgun_FireCritt.wav"
+}

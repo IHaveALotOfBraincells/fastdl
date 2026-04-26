@@ -837,7 +837,6 @@
 			{
 				"min_viewmodel_offset"	"10 0 -9"
 			}
-
 			"image_inventory"		"backpack/weapons/w_models/w_medigun"
 			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
 			"drop_sound"			"ui/item_heavy_gun_drop.wav"
@@ -2814,7 +2813,7 @@
 				"Blast radius decreased"
 				{
 					"attribute_class"	"mult_explosion_radius"
-					"value"				"0.5"
+					"value"				"0.7"
 				}	
 				"clip size penalty"
 				{
@@ -3013,44 +3012,56 @@
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
-		"7702" // Bonesaw
+		"7702" // geneva suggestion
 		{
-			"name"				"TF_WEAPON_BONESAW"
-			"item_name"			"saw"
-			"item_type_name"	"#TF_Weapon_Bonesaw"
-			"item_description"	"#TF_Weapon_Bonesaw_Desc"
+			"name"				"TF_WEAPON_MEDIGUN"
+			"item_name"			"geneva suggestion"
+			"item_type_name"	"#TF_Weapon_MediGun"
+			"item_description"	"#TF_Weapon_MediGun_Desc"
 			"item_quality"		"normal"
 			"show_in_armory" "0"
-			"item_class"	"tf_weapon_bonesaw"
-			"item_slot"		"melee"
+			"item_class"	"tf_weapon_flamethrower"
+			"item_slot"		"secondary"
+			"anim_slot"		"secondary"
+			"bucket"					"1"
+			"bucket_position"			"0"
 			"used_by_classes"
 			{
 				"Medic"	"1"
 			}
 
-			"model_player"		"models/weapons/v_models/v_bonesaw_medic.mdl"
-			"model_world"		"models/weapons/w_models/w_bonesaw.mdl"
+			"model_player"		"models/weapons/v_models/v_medigun_medic.mdl"
+			"model_world"		"models/weapons/w_models/w_medigun.mdl"
 			"attach_to_hands"	"2"
+			"extra_wearable" 	"models/player/items/medic_backpack.mdl"
+			"equip_region"		"medigun_backpack"
 			"static_attrs"
 			{
-				"min_viewmodel_offset"	"10 0 -12"
+				"min_viewmodel_offset"	"10 0 -9"
+
+				"flame_gravity"					"0"
+				"flame_drag"					"8.500000"
+				"flame_up_speed"				"50"
+				"flame_speed"					"2450"
+				"flame_spread_degree"			"2.800000"
+				"flame_lifetime"				"0.600000"
+				"flame_random_life_time_offset"	"0.100000"
+				"flame_velocity_fade_start"		"0.300000"
+				"flame_velocity_fade_end"		"0.500000"
+				"extinguish restores health" "20"
+				//"torso scale" "2"
 			}
-			"attributes"
+			"visuals_red"
 			{
-				"damage penalty"
-				{
-					"attribute_class"		"mult_dmg"
-					"value"				"0.2"
-				}
-				"mod burstfire"
-				{
-					"attribute_class"	"mod_burstfire"
-					"value" "5 0.245"
-				}
+				"beam_effect"			"chemthrower_red"
 			}
-			"image_inventory"		"backpack/weapons/w_models/w_bonesaw"
-			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
-			"drop_sound"			"ui/item_metal_weapon_drop.wav"
+			"visuals_blu"
+			{
+				"beam_effect"			"chemthrower_blue"
+			}
+			"image_inventory"		"backpack/weapons/w_models/w_medigun"
+			"mouse_pressed_sound"	"ui/item_medigun_pickup.wav"
+			"drop_sound"			"ui/item_heavy_gun_drop.wav"
 		}
 		"7300" // Air Superiority
 		{
@@ -3074,7 +3085,7 @@
 			"attach_to_hands"	"1"
 			"static_attrs"
 			{
-				"flamethrower explain"			"1"
+				//"flamethrower explain"			"1"
 				"min_viewmodel_offset"	"10 0 -10"
 
 				"flame_gravity"					"0"
@@ -3089,22 +3100,22 @@
 			}
 			"attributes"
 			{
-				"air superiority explain" "1"
-				"airblast_give_teammate_speed_boost"
+				//"air superiority explain" "1"
+				"airblast dashes"
 				{
-					"attribute_class"	"airblast_give_teammate_speed_boost"
+					"attribute_class"	"airblast_dashes"
 					"value"	"1"
 				}
-				"airblast cost decreased"
+				"apply self knockback airblast"
+				{
+					"attribute_class"	"apply_self_knockback_airblast"
+					"value"	"80"
+				}
+				//"slappers explain" "1"
+				"airblast cost increased"
 				{
 					"attribute_class"	"mult_airblast_cost"
-					"value"	"0.5"
-				}
-				"slappers explain" "1"
-				"extinguish restores health"
-				{
-					"attribute_class"	"extinguish_restores_health"
-					"value"	"20"
+					"value"	"2"
 				}
 				"damage penalty"
 				{
@@ -3117,16 +3128,16 @@
 					"value"	"0.666"
 				}
 				"hidden separator" "1"
-				"single wep holster time increased"
-				{
-					"attribute_class"		"mult_switch_from_wep_deploy_time"
-					"value"				"0.8"
-				}
-				"single wep deploy time increased"
-				{
-					"attribute_class"		"mult_single_wep_deploy_time"
-					"value"				"0.8"
-				}
+				//"single wep holster time increased"
+				//{
+				//	"attribute_class"		"mult_switch_from_wep_deploy_time"
+				//	"value"				"0.8"
+				//}
+				//"single wep deploy time increased"
+				//{
+				//	"attribute_class"		"mult_single_wep_deploy_time"
+				//	"value"				"0.8"
+				//}
 			}
 			"visuals"
 			{
@@ -3168,21 +3179,11 @@
 					"attribute_class"	"special_taunt"
 					"value" "1"
 				}
-				"not crit vs burning flare"
-				{
-					"attribute_class"	"not_crit_vs_burning_flare"
-					"value"				"1"
-				}
-				"mod crit airborne simple"
-				{
-					"attribute_class"	"crit_airborne_simple"
-					"value"				"1"
-				}
-				"apply z velocity on damage"
-				{
-					"attribute_class"	"apply_z_velocity_on_damage"
-					"value"				"-1000"
-				}
+				//"not crit vs burning flare"
+				//{
+				//	"attribute_class"	"not_crit_vs_burning_flare"
+				//	"value"				"1"
+				//}
 				"spitfire explain 2" "1"
 				"Projectile speed increased"
 				{
@@ -3192,7 +3193,7 @@
 				"damage bonus"
 				{
 					"attribute_class"	"mult_dmg"
-					"value"				"1.2"
+					"value"				"1.333"
 				}
 				"spitfire explain" "1"
 				//"maxammo secondary reduced"
@@ -3202,16 +3203,21 @@
 				//}
 				"reload while not active explain"	"1"
 				"hidden separator" "1"
+				"mod flaregun fires pellets with knockback"
+				{
+					"attribute_class"	"set_weapon_mode"
+					"value"	"1"
+				}
 				"mod crit airborne simple min height"
 				{
 					"attribute_class"	"crit_airborne_simple_min_height"
 					"value"				"-90"
 				}
-				//"add condition on kill"
-				//{
-				//	"attribute_class"	"add_onkill_addcond_self"
-				//	"value"	"32 2"
-				//}
+				"self dmg push force decreased"
+				{
+					"attribute_class"	"mult_dmgself_push_force"
+					"value"		"1.1"
+				}
 				"mod projectile heat seek power"
 				{
 					"attribute_class"	"mod_projectile_heat_seek_power"
@@ -3222,10 +3228,15 @@
 					"attribute_class"	"mult_wpn_burntime"
 					"value"	"-200"
 				}
-				"rocket limited lifetime"
+				//"rocket limited lifetime"
+				//{
+				//	"attribute_class"	"rocket_lifetime"
+				//	"value"	"6"
+				//}
+				"blast dmg to self increased"
 				{
-					"attribute_class"	"rocket_lifetime"
-					"value"	"6"
+					"attribute_class"	"blast_dmg_to_self"
+					"value"	"1.25"
 				}
 			}
 
@@ -3261,7 +3272,7 @@
 			"item_description"	""
 			"item_quality"		"normal"
 			"propername"	 "1"
-			"item_class"	"tf_weapon_fists"
+			"item_class"	"tf_weapon_fireaxe"
 			"item_slot"		"melee"
 			"anim_slot"	"MELEE_ALLCLASS"
 			"used_by_classes"
@@ -3509,59 +3520,128 @@
 		}
 		"7305" // population controller
 		{
-		    "name"						"Heavy Shotgun"
+		    "name"						"population controller"
 			"item_class"				"TF_WEAPON_SHOTGUN_PRIMARY"
-			"show_in_armory"			"0"
+			"show_in_armory"			"1"
 			"item_slot"					"primary"
-			"anim_slot"					"secondary"
+			"anim_slot"					"primary"
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"82"
 
 			"propername"				"0"
-			"item_name"					"Heavy Shotgun"
-			"item_type_name"			"Heavy Shotgun"
+			"item_name"					"population controller"
+			"item_type_name"			"Shotgun"
 			"item_description"			"Model by: 'Svdl'"
-            "item_logname"				"Heavy Shotgun"
-			"item_iconname"				"Heavy Shotgun"
-			"image_inventory"			"backpack/weapons/c_models/c_barrakada/c_barrakada"
-			"model_world"				"models/weapons/c_models/c_barrakada/c_barrakada.mdl"
-			"model_player"				"models/weapons/v_models/v_barrakada/v_barrakada_fix.mdl"
-			//"extra_wearable"			"models/workshop/player/items/heavy/dec24_battle_balaclava_style2/dec24_battle_balaclava_style2.mdl"
-			"attach_to_hands"			"2"
+            "item_logname"				"Population Controller"
+			"item_iconname"				"Population Controller"
+			"image_inventory"			"backpack/weapons/c_models/c_populationcontroller/c_populationcontroller_large.vtf"
+			"model_world"				"models/weapons/c_models/c_populationcontroller/c_populationcontroller.mdl"
+			"model_player"				"models/weapons/c_models/c_populationcontroller/c_populationcontroller.mdl"
+			"extra_wearable"			"models/workshop/player/items/pyro/sf14_hw2014_robot_arm/sf14_hw2014_robot_arm.mdl"
+			"attach_to_hands"			"1"
 			"used_by_classes"
 			{
 				"pyro"					"1"
 			}
 			"static_attrs"
 			{
-				"class select override vcd"				"taunt02_v1"
 				"min_viewmodel_offset"					"5 -2 -10"
 			}
 			"attributes"
 			{
+				"mod no reload DISPLAY ONLY"
+				{
+					"attribute_class"	"mod_no_reload_display_only"
+					"value"				"1"
+				}
 				"bullets per shot bonus"
 				{
 					"attribute_class"	"mult_bullets_per_shot"
-					"value" "1.66"
+					"value" "1.33"
 				}
+				//"mod burstfire"
+				//{
+				//	"attribute_class"	"mod_burstfire"
+				//	"value" "2 0.2"
+				//}
 				"mod max primary clip override"
 				{
 					"attribute_class"	"mod_max_primary_clip_override"
 					"value"	"-1"
 				}
-				"fire rate penalty"
+				"mod horizontal spread"
 				{
-					"attribute_class"		"mult_postfiredelay"
-					"value"				"1.3"
+					"attribute_class"	"mod_horizontal_spread"
+					"value"				"1"
+				}
+				"spread penalty"
+				{
+					"attribute_class"	"mult_spread_scale"
+					"value" "1.25"
+				}
+				"hidden primary max ammo bonus"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"0.625"
 				}
 			}
 			"visuals"
 			{
-			    "sound_single_shot"		"Weapon_HuntingShotgun.Fire"
-				"sound_burst"			"Weapon_HuntingShotgun.FireCrit"
+			    "sound_single_shot"		"Weapon_Population.Single"
+				"sound_burst"			"Weapon_Population.SingleCrit"
+				"tracer_effect"         "db_tracer01"
+				"animation_replacement"
+				{
+					"ACT_VM_PRIMARYATTACK"		"ACT_PRIMARY_VM_PRIMARYATTACK_3"
+
+					"ACT_PRIMARY_VM_INSPECT_START"		"ACT_ITEM4_VM_INSPECT_START"
+					"ACT_PRIMARY_VM_INSPECT_IDLE"		"ACT_ITEM4_VM_INSPECT_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_END"		"ACT_ITEM4_VM_INSPECT_END"
+
+					"ACT_MP_ATTACK_CROUCH_PRIMARY"		"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_STAND_PRIMARY"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_PRIMARY"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+
+					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"	"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+				}
 			}
 			"mouse_pressed_sound"		"#ui/item_pack_pickup.wav"
 			"drop_sound"				"#ui/item_pack_drop.wav"
+		}
+		"7306" // axtinguisher
+		{
+			"name"				"axtinguisher"
+			"item_class"		"tf_weapon_fireaxe"
+			"item_logname"		"axtinguisher"
+			"item_iconname"		"axtinguisher"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_FireAxe"
+			"item_name"	"#TF_Unique_Achievement_FireAxe1"
+			"item_slot"	"melee"
+			"image_inventory"	"backpack/weapons/c_models/c_axtinguisher_nowp/c_axtinguisher_pyro_large.vtf"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"	"models/weapons/c_models/c_axtinguisher/c_axtinguisher_pyro.mdl"
+			"attach_to_hands"	"1"
+			"inspect_panel_dist" "55"
+			"propername"	"1"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"used_by_classes"
+			{
+				"pyro"	"1"
+			}
+			"static_attrs"
+			{
+				"attack_minicrits_and_consumes_burning"	"1"
+				"damage penalty"						"0.67"
+				"single wep holster time increased"		"1.35"
+				"crit mod disabled"						"0"
+			}
+			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
 		"7500"
 		{
@@ -4143,22 +4223,12 @@ Animations by: 'Kylul'"
 					"attribute_class"	"mod_rocket_gravity"
 					"value"				"0.9"
 				}
-				//"auto fires when full"
-				//{
-				//	"attribute_class"	"auto_fires_when_full"
-				//	"value"				"1"
-				//}
 				"hidden separator"		"1"
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
 					"value"				"0.15"
 				}
-				//"custom rampup"
-				//{
-				//	"attribute_class"	"mod_custom_rampup"
-				//	"value"				"0.8"
-				//}
 				"projectile spread angle penalty"
 				{
 					"attribute_class"	"projectile_spread_angle"
@@ -5334,7 +5404,12 @@ Animations by: 'GarlikBread'"
 				"clip size penalty"
 				{
 					"attribute_class"	"mult_clipsize"
-					"value"				"0.6"
+					"value"				"0.72"
+				}
+				"maxammo secondary increased"
+				{
+					"attribute_class"		"mult_maxammo_secondary"
+					"value"				"0.72"
 				}
 			}
 			"visuals"
@@ -5589,7 +5664,7 @@ Animations by: 'GarlikBread'"
 				//"maxammo metal increased" "1.5"
 				"health regen" "4"
 				//"move speed penalty" "0.9"
-				"torso scale" "0.5"
+				//"torso scale" "0.5"
 			}
 			"attributes"
 			{
@@ -5784,6 +5859,51 @@ Animations by: 'GarlikBread'"
 			}
 			"mouse_pressed_sound"		"#weapons/draw_six_shooter.wav"
 			"drop_sound"				"#ui/item_light_gun_drop.wav"
+		}
+		"7604" // Engi Shotgun | punisher
+		{
+			"name"				"punisher"
+			"item_description"	"Model by: 'Haau'"
+			"item_name"			"get-of-my-lawnathon 9000"
+			"item_type_name"	"#TF_Weapon_Shotgun"
+			"item_quality"		"normal"
+			"propername" "1"
+			"item_class"	"tf_weapon_shotgun"
+			"image_inventory_size_w"	"252"
+			"image_inventory_size_h"	"168"
+			"image_inventory"			"backpack/weapons/w_models/w_engishotgun/w_engishotgun_large.vtf"
+			"model_world"				"models/weapons/c_models/c_engishotgun/c_engishotgun.mdl"
+			"model_player"				"models/weapons/c_models/c_engishotgun/c_engishotgun.mdl"
+			"attach_to_hands"	"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"	"10 0 -9"
+			}
+			"mouse_pressed_sound"	"ui/item_medium_gun_pickup.wav"
+			"drop_sound"			"ui/item_medium_gun_drop.wav"
+			"item_slot"			"primary"
+			"used_by_classes"
+			{
+				"Engineer"	"1"
+			}
+			"attributes"
+			{
+				"damage bonus bullet vs sentry target"
+				{
+					"attribute_class"	"mult_dmg_bullet_vs_sentry_target"
+					"value"				"1.6"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.8"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"			"Weapon_EngiShot.Single"
+				"sound_burst"				"Weapon_EngiShot.SingleCrit"
+			}
 		}
 	}
 	"prefabs"
@@ -16254,8 +16374,7 @@ Animations by: 'GarlikBread'"
 		{
 			"name"					"american diet explain"
 			"attribute_class"		"american_diet_explain"
-			"description_string"	"You are the height of the average american
-			+100% risk of heart failure"
+			"description_string"	"+100% risk of heart failure"
 			"description_format"	"value_is_additive"
 			"effect_type"			"negative"
 			"hidden"				"0"
@@ -16379,8 +16498,9 @@ Animations by: 'GarlikBread'"
 		{
 			"name"					"spitfire explain 2"
 			"attribute_class"		"explain"
-			"description_string"	"Flares are not affected by gravity
-			Flares bring airborne enemies to the ground"
+			"description_string"	"Deals minicrits to burning enemies
+			Allows you to blast jump by shooting at your feet
+			Flares are not affected by gravity"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"positive"
@@ -16602,6 +16722,16 @@ Animations by: 'GarlikBread'"
 			"name"					"quickdraw explain"
 			"attribute_class"		"explain"
 			"description_string"	"Fires the entire clip at once"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"1"
+		}
+		"4046"
+		{
+			"name"					"airblast dashes"
+			"attribute_class"		"airblast_dashes"
+			"description_string"	"Alt-Fire: Dash in the direction you looking in"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
 			"effect_type"			"neutral"

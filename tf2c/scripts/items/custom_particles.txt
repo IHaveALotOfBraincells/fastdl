@@ -1,5 +1,7 @@
 particles_manifest
 {
 	file    "!particles/nowp_flamethrower.pcf"
-	file    "!nowp_wpnfx.pcf"
+	file    "!particles/nowp_wpnfx.pcf"
+	file    "!particles/db_tracers.pcf"
+	file    "!particles/nowp_medigun.pcf"
 }
